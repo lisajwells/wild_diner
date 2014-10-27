@@ -7,14 +7,20 @@ class SearchesController < ApplicationController
     search_loc = params[:searchLocation]
     search_location = search_loc.tr!(' ', '+s')
 
- 
+ # to get lat long
     response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
 
     lat = response_google["results"][0]["geometry"]["location"]["lat"]
     lng = response_google["results"][0]["geometry"]["location"]["lng"]
 
-		results = { lat: lat, lng: lng }
+		# latlong = { lat: lat, lng: lng }
 
+	# to get all sightings by season
+		sightings = Sighting.where(season: season)
+
+
+binding.pry
+		results = { lat: lat, lng: lng, sightings: sightings }
 		respond_to do |format|
       format.json { render :json => results.to_json }
     end    
@@ -22,7 +28,7 @@ class SearchesController < ApplicationController
   end  
 
 
-  # to display return of data gets from search form info
+  # to get pin info from db (lat lng of all sightings by season)
   def create
      
   end  

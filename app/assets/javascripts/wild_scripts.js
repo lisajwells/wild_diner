@@ -1,24 +1,29 @@
 var users = []
 
-  // this came from google map example and now i'm gonna mess with it (feeding results lat long and pin points)
+  // this came from google map example and now i'm gonna mess with it 
+  // (feeding results lat long)
   // should call from mapSearchButton block
       function initialize(results) {
         // lat long coming from results of mapSearchButton function to searches_controller
         var lat = results["lat"];
         var lng = results["lng"];
-
+        var myLatlng = new google.maps.LatLng(lat, lng);
         var mapOptions = {
-          center: { lat: lat, lng: lng},
+          center: myLatlng,
           zoom: 9
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
 
+
         //show map_div
         $('div#map_div').removeClass('noshow');
 
       }
+      // this is outside the function
       google.maps.event.addDomListener(window, 'load', initialize);
+
+  
 
 
 
@@ -93,6 +98,7 @@ $(function(){
     $('div#report_or_hunt').addClass('noshow');
     $('div#sightings_index_main').removeClass('noshow');
   });
+
 	  
 ///// button on sightings page to send search location and season to ruby server
   var mapSearchButton = $('#map_search_button')
@@ -113,11 +119,10 @@ $(function(){
         searchLocation: searchLocation
       },
     }).done(function(results){
-      //process results here (i think i'll call a function that gets them to get the map)
-initialize(results)
-      console.log(results)
-    
 
+      //process results here (i think i'll call a function that gets them to get the map)
+      initialize(results)
+      console.log(results)
     })
   });
 
