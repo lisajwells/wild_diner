@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
 
     season_id = params[:season_id]
     search_loc = params[:searchLocation]
-binding.pry
+# binding.pry
     search_location = search_loc.tr!(' ', '+s')
 
     response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
