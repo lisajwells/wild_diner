@@ -9,7 +9,7 @@ $(function(){
 
     // make the report_or_hunt div hidden and the sightings_index div visible
     $('div#report_or_hunt').addClass('noshow');
-    $('div#sightings_index').removeClass('noshow');
+    $('div#sightings_index_main').removeClass('noshow');
 
   });
 	  
@@ -29,7 +29,7 @@ $(function(){
     // call to ruby server to get latLng from googlemaps api and pin map for season
     $.ajax({
       type: "POST",
-      url: "http://127.0.0.1:3000/searches",
+      url: "http://localhost:3000/searches",
 
       data: {
         season: season,

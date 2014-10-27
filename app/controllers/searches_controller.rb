@@ -3,11 +3,11 @@ class SearchesController < ApplicationController
   # to act on search form info
   def new
 
-    season_id = params[:season_id]
+    season = params[:season]
     search_loc = params[:searchLocation]
-# binding.pry
     search_location = search_loc.tr!(' ', '+s')
 
+# binding.pry
     response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
 
     lat = response_google["results"][0]["geometry"]["location"]["lat"]
