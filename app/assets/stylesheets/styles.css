@@ -29,6 +29,13 @@ body {
   text-align: right;
 }
 
+.scatter_img {
+  position: absolute;
+  left: 30px;
+  top: 200px;
+  z-index: -1;
+}
+
 .page-header {
   border-bottom: 1px solid #e44424;
 }

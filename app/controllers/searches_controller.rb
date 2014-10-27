@@ -7,13 +7,17 @@ class SearchesController < ApplicationController
     search_loc = params[:searchLocation]
     search_location = search_loc.tr!(' ', '+s')
 
-# binding.pry
+ 
     response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
 
     lat = response_google["results"][0]["geometry"]["location"]["lat"]
     lng = response_google["results"][0]["geometry"]["location"]["lng"]
 
-    
+		results = { lat: lat, lng: lng }
+
+		respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
 
   end  
 

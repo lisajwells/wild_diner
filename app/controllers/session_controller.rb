@@ -25,6 +25,12 @@ class SessionController < ApplicationController
     render :maptest
   end
 
+  def test
+    user = User.find_by(id: params[:id])
+
+    render :index_temp_test
+  end
+
   # def destroy
   #   reset_session
   #   redirect_to '/login'
