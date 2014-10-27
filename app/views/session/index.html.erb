@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Which Way to Wild Diner?</title>
+
+</head>
+<body>
+  <!-- header -->
+  <div class="container">
+    <%= render partial: "shared/header" %>
+
+    <!-- Begin page content -->
+
+    <!-- Begin report_or_hunt -->
+    <div class="noshow" id="report_or_hunt">
+      <%= render partial: "report_or_hunt" %>
+    </div>
+    <!-- End report_or_hunt -->
+
+    <!-- Begin sightings_index -->
+    <div class="row">
+      <div class="col-md-8" id="sightings_index">
+        <%= render partial: "sightings/sightings_index" %>
+      </div>
+      <div class="col-md-16" id="map_div">
+        <%= render partial: "map" %>
+      </div>
+    </div>  
+    <!-- End sightings_index -->
+
+
+  </div>
+  <!-- end page content -->
+
+<%= render partial: "shared/footer" %>
+
+</body>
+</html>

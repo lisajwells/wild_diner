@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wild Diner</title>
+    <link href="sticky-footer.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+  
+   <!-- Begin page content -->
+    <div class="container bottom_pad">
+      <div class="page-header">
+        <h1>Wild Diner</h1>
+      </div>
+
+      <!-- Intro with login buttons and disclaimer -->
+      <div class="row">
+
+        <div class="col-md-4">
+          <form action="session/new" method="GET">
+            <button type="submit" class="btn btn-primary btn-lg" id="login_new">Login</button>
+          </form>
+        </div>
+
+        <div class="col-md-16">
+          <p class="lead">A forum for those who want to share their uncultivated food finds.</p>
+          <p class="lead2">Watch what you eat! Wild Diner expects you to do your research. Don't believe everything your fellow foragers tell you.</p>
+        </div>
+
+        <div class="col-md-4">        
+          <form action="users/new" method="GET">
+          <button type="button" class="btn btn-primary btn-lg" id="signup_new">Join us!</button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    <!-- end page content -->
+
+  <%= render partial: "shared/footer" %>
+
+
+
+</body>
+</html>
+
+

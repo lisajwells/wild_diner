@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900|Roboto+Slab:300,700,400);
+
+/* red e44424
+blue 67bcdb
+green a2ab58
+*/
+body {
+  background-color: #a2ab58;
+  font-family: 'Roboto Slab', serif;
+}
+
+#map-canvas { 
+  height: 300px; width: 420px;
+  border: 2px solid #e44424;
+}
+
+#map_div { padding-bottom: 30px;}
+
+
+.noshow {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.page-header {
+  border-bottom: 1px solid #e44424;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.bottom_pad {
+  padding-bottom: 30px;
+}
+
+nav.topnav ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav.topnav ul a:hover {
+  color: #237795;
+}
+
+.topnav {
+  text-align: right;
+}
+
+.topnav ul {
+  padding-top: 42px;
+}
+
+.topnav ul li {
+  display: inline-block;
+  margin-left: 20px;
+  text-align: right;
+}
+
+.topnav ul li:hover {
+  color: #096D91;
+}
+
+.page-header h1 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 100px;
+}
+
+.page-header h2 {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 60px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.lead2 {
+  border-top: 1px solid #e44424;
+  padding: 10px 0 20px 0;
+  font-size: 16px;
+}
+
+.report_or_hunt .lead {
+  font-size: 26px;
+}
+
+.btn-primary {
+  background-color: #e44424;
+}
+
+.btn-primary:hover {
+  background-color: #237795;
+}
+
+.form-control {
+  background-color: #D7DEA0;
+}
+
+#login_submit {
+  background-color: #e44424;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#login_submit:hover {
+  background-color: #237795;
+}
+
+.footer {
+  background-color: #237795;
+  color: #D7DEA0;
+}
+
+.footer ul {
+  padding:20px 0 0 0;
+}
+
+.footer nav li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px 0 0px;
+  padding: 0;
+}
+

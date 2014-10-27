@@ -1,0 +1,28 @@
+
+<!-- Form to enter search for map display -->
+		<form role="form" id="mapsearch_form">
+
+			<!-- location of search -->
+			<div class="form-group">
+				<label for="search_location">Where are you?</label>
+				<input type="text" name="search_location" class="form-control input-sm" id="search_location" placeholder="Nameoftown, STATE">
+			</div>
+				
+			<!-- dropdown for season of search -->
+			<label for="season_dropdown">What time of year is it?</label>
+			<select name="season_dropdown" id="season_dropdown" class="form-control newFormSelect input-sm">
+				<option selected="selected">Select a season</option>
+				<option value="spring">Spring</option>
+				<option value="summer">Summer</option>
+				<option value="autumn">Autumn</option>
+				<option value="winter">Winter</option>
+			</select>
+
+			<button type="submit" class="btn btn-primary" name="map_search" id="map_search_button">Submit</button>
+			<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+		</form>
+
+
+
+
+
