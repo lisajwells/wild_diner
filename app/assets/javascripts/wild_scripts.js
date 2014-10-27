@@ -1,5 +1,27 @@
 var users = []
 
+  // this came from google map example and now i'm gonna mess with it (feeding results lat long and pin points)
+  // should call from mapSearchButton block
+      function initializeMap(results) {
+        // lat long coming from results of mapSearchButton function to searches_controller
+        var lat = results["lat"];
+        var lng = results["lng"];
+
+        var mapOptions = {
+          center: { lat: lat, lng: lng},
+          zoom: 9
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+        //show map_div
+        $('div#map_div').removeClass('noshow');
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
 function getSightingsByUser(user_id) {
   $.ajax({
     url: '/users/' + user_id,
@@ -91,15 +113,13 @@ $(function(){
         searchLocation: searchLocation
       },
     }).done(function(results){
-      //process results here
-
+      //process results here (i think i'll call a function that gets them to get the map)
+initializeMap(results)
       console.log(results)
     
 
     })
   });
-
-
 
 
 
