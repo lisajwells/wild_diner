@@ -38,6 +38,8 @@ var users = [];
       var sightingId = seasonSightings[s]["id"];
       var sightingFood = seasonSightings[s]["food"];
       var sightingSeason = seasonSightings[s]["season"];
+      var sightingDescription = seasonSightings[s]["description"];
+      var sightingPhoto = seasonSightings[s]["photo_url"];
 
 
       var sightingLat = seasonSightings[s]["lat"];
@@ -45,7 +47,7 @@ var users = [];
       var sightingLatLng = new google.maps.LatLng(sightingLat, sightingLng);
 
       // var contentString = '<div id="infoContent">'+'<h4 id="firstHeading" class="firstHeading">'sightingFood'</h4>'+'<div id="bodyContent">'+'<p><b>'sightingSeason'</b></p></div></div>';
-      var contentString = '<p>content here,</p>';
+      var contentString = '<div id="infoContent"><p><b>'+sightingFood+'</p></b><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
 
       var infowindow = new google.maps.InfoWindow({
       content: contentString
@@ -58,7 +60,10 @@ var users = [];
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map,marker);
+      console.log(this); // this does show each correct marker but triggers other
+       $('.modal-body').html(contentString);
+      $('#pinModal').modal('toggle');
+      // infowindow.open(map,marker);
     });
 
     }
@@ -68,66 +73,11 @@ var users = [];
 
 
 
-// function getSightingsByUser(user_id) {
-//   $.ajax({
-//     url: '/users/' + user_id,
-//     type: 'GET'
-//   }).done(function(data){
-
-//     var sightings = data["sightings"];
-//     var $ul = $("#sightings_ul");
-
-//     for (i = 0; i < sightings.length; i++) {
-//       var sightingFood = sightings[i]["food"];
-//       var sightingLocation = sightings[i]["location"];
-//       var sightingSeason = sightings[i]["season"];
-
-//       // we need the sighting obj id's in the db so that... 
-//       var sightingId = sightings[i]["id"]; 
-
-//               // ...we can add it to the li as a DOM id so  
-//               // when we go to delete it in the sighting view 
-//       $ul.append("<li class='linkSighting' id=" + sightingId  + 
-//         "><a href='#'><span class='bullet'>$utrif;</span>" + sightingFood + "</a></li>");
-
-//     }
-//   })
-// };
-// getSightingsByUser(1);
-
-// function getNamesCategory(category) {
-//     for (c = 0; c < categories.length; c++){
-//       if (category == categories[c]["name"]) {
-//       category_id = categories[c]["id"];    
-//       }
-//     }
-
-//   $.ajax({
-//     url: '/categories/' + category_id,
-//     type: 'GET'
-//   }).done(function(data){
-
-//     var contacts = data["contacts"];
-//     var $ul = $("#" + category + "_ul");
-    
-//     for (i = 0; i < contacts.length; i++) {
-//       var contactName = contacts[i]["name"];
-
-//       // we need the contact obj id's in the db so that... 
-//       var contactId = contacts[i]["id"]; 
-
-//                       // we can add it to the li as a DOM id so  
-//                       // when we go to delete it in the contact view 
-//       $ul.append("<li class='linkContact' id=" + contactId  + 
-//         "><a href='#'><span class='glyphicon glyphicon-star'></span>" + contactName + "</a></li>");
-//     }
-//   })
-// };
 
 
-
-
+/////////////////// on load
 $(function(){
+
 
 ///// button to go to sightings index (map view) from sessions index
   var huntButton = $('#hunt_button');
@@ -161,7 +111,6 @@ $(function(){
         searchLocation: searchLocation
       },
     }).done(function(results){
-console.log(results)
 
       //process results here (i think i'll call a function that gets them to get the map)
       initialize(results);      
