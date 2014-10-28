@@ -1,4 +1,8 @@
-.modal {
-  /*background-color: #67bcdb;*/
-  /*width: 200px;*/
+.modal-content {
+  background-color: #237795;
+  color: #D7DEA0;
+}
+
+.modal-header {
+border-bottom: 1px solid #e44424;
 }

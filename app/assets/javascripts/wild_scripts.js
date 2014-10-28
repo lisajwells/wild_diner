@@ -47,7 +47,7 @@ var users = [];
       var sightingLatLng = new google.maps.LatLng(sightingLat, sightingLng);
 
       // var contentString = '<div id="infoContent">'+'<h4 id="firstHeading" class="firstHeading">'sightingFood'</h4>'+'<div id="bodyContent">'+'<p><b>'sightingSeason'</b></p></div></div>';
-      var contentString = '<div id="infoContent"><p><b>'+sightingFood+'</p></b><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
+      var contentString = '<div id="infoContent"><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
 
       var infowindow = new google.maps.InfoWindow({
       content: contentString
@@ -61,6 +61,7 @@ var users = [];
 
     google.maps.event.addListener(marker, 'click', function() {
       console.log(this); // this does show each correct marker but triggers other
+       $('.modal-title').html(sightingFood);
        $('.modal-body').html(contentString);
       $('#pinModal').modal('toggle');
       // infowindow.open(map,marker);
