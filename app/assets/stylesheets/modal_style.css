@@ -3,6 +3,11 @@
   color: #D7DEA0;
 }
 
+.modal-content img {
+  width: 200px;
+}
+
 .modal-header {
 border-bottom: 1px solid #e44424;
 }
+

@@ -46,33 +46,17 @@ var users = [];
 
       // add event listener to marker, which calls pinModal function to pop up modal
       google.maps.event.addListener(marker, 'click', function() {
-        console.log(this); // this does show each correct marker but triggers other
+        
         pinModal(this.info)
       });
     }
   };
 
 ////// function to call modal when pin is clicked
-// call it from event listener above??????????????????????????
+// call it from event listener above
 function pinModal(info) {
 
-      // get info about this sighting for modal
-      // $.ajax({
-      //   type: "GET",
-      //   url: "http://localhost:3000/searches",
-
-      //   data: {
-      //     sightingId: sightingId,
-      //   },
-
-      //   }).done(function(sighting){
-
-      // })
-
-    // var sightingId = info["id"];
-
     var sightingFood = info["food"];
-    // var sightingSeason = info["season"];
     var sightingDescription = info["description"];
     var sightingPhoto = info["photo_url"];
 
