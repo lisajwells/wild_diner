@@ -1,29 +1,46 @@
-// function getSightingsByUser(user_id) {
-//   $.ajax({
-//     url: '/users/' + user_id,
-//     type: 'GET'
-//   }).done(function(data){
+function getSightingsByUser() {
+  $.ajax({
+    url: '/users',
+    type: 'GET'
+  }).done(function(data){
 
-//     var sightings = data["sightings"];
-//     var $ul = $("#sightings_ul");
+    var sightings = data["user_sightings"];
+    var $ul = $("#sightings_ul");
 
-//     for (i = 0; i < sightings.length; i++) {
-//       var sightingFood = sightings[i]["food"];
-//       var sightingLocation = sightings[i]["location"];
-//       var sightingSeason = sightings[i]["season"];
+    for (i = 0; i < sightings.length; i++) {
+      var sightingFood = sightings[i]["food"];
+      var sightingLocation = sightings[i]["location"];
+      var sightingSeason = sightings[i]["season"];
 
-//       // we need the sighting obj id's in the db so that... 
-//       var sightingId = sightings[i]["id"]; 
+      // we need the sighting obj id's in the db so that... 
+      var sightingId = sightings[i]["id"]; 
 
-//               // ...we can add it to the li as a DOM id so  
-//               // when we go to delete it in the sighting view 
-//       $ul.append("<li class='linkSighting' id=" + sightingId  + 
-//         "><a href='#'><span class='bullet'>$utrif;</span>" + sightingFood + "</a></li>");
+              // ...we can add it to the li as a DOM id so  
+              // when we go to delete it in the sighting view 
+      $ul.append("<li class='linkSighting' id=" + sightingId  + 
+        "><a href='#'><span class='bullet'>$utrif;</span>" + sightingFood + "</a></li>");
 
-//     }
-//   })
-// };
-// getSightingsByUser(1);
+    }
+  })
+};
+
+///// button on found_or_hunt page to call getSightingsByUser function
+  var goToUserShowButton = $('#found_button')
+    goToUserShowButton.on("click", function(e){
+    e.preventDefault();
+console.log('clicked')
+
+      //process results here
+      getSightingsByUser();      
+    });
+
+
+
+
+
+
+
+
 
 // function getNamesCategory(category) {
 //     for (c = 0; c < categories.length; c++){

@@ -46,7 +46,7 @@ var users = [];
 
       // add event listener to marker, which calls pinModal function to pop up modal
       google.maps.event.addListener(marker, 'click', function() {
-        
+
         pinModal(this.info)
       });
     }
@@ -100,7 +100,7 @@ $(function(){
     // call to ruby server to get latLng from googlemaps api and pin map for season
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000/searches",
+      url: "/searches",
 
       data: {
         season: season,

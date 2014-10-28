@@ -5,6 +5,7 @@
 
 .modal-content img {
   width: 200px;
+  border-radius: 8px;
 }
 
 .modal-header {

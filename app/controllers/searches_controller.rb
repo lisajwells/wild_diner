@@ -13,8 +13,6 @@ class SearchesController < ApplicationController
     lat = response_google["results"][0]["geometry"]["location"]["lat"]
     lng = response_google["results"][0]["geometry"]["location"]["lng"]
 
-		# latlong = { lat: lat, lng: lng }
-
 	# to get all sightings by season
 		season_sightings = Sighting.where(season: season)
 

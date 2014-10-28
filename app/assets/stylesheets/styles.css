@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900|Roboto+Slab:300,700,400);
 
-/* red e44424
-blue 67bcdb
-green a2ab58
-*/
 body {
   background-color: #a2ab58;
   font-family: 'Roboto Slab', serif;
@@ -73,6 +69,8 @@ nav.topnav ul a:hover {
   display: inline-block;
   margin-left: 20px;
   text-align: right;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .topnav ul li:hover {
@@ -97,7 +95,7 @@ nav.topnav ul a:hover {
   font-size: 20px;
 }
 
-.report_or_hunt .lead {
+#report_or_hunt .lead {
   font-size: 30px;
 }
 
