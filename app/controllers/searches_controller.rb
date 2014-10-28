@@ -18,8 +18,8 @@ class SearchesController < ApplicationController
 	# to get all sightings by season
 		season_sightings = Sighting.where(season: season)
 
-
 		results = { lat: lat, lng: lng, season_sightings: season_sightings }
+		
 		respond_to do |format|
       format.json { render :json => results.to_json }
     end    
