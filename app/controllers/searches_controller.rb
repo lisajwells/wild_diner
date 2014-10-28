@@ -27,8 +27,14 @@ class SearchesController < ApplicationController
   end  
 
 
-  # to get pin info from db (lat lng of all sightings by season)
-  def create
+  # to get sighting info from db from pinModal function
+  def show
+    sighting = Sighting.where(id: sightingId)
+    binding.pry
+
+    respond_to do |format|
+      format.json { render :json => sighting.to_json }
+    end    
      
   end  
 

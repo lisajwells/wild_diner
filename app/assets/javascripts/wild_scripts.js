@@ -22,56 +22,67 @@ var users = [];
       $('div#map_div').removeClass('noshow');
       placeSeasonMarkers(results, map);
     };
-    // this is outside the function, now commented so the map waits to load until it's called
-    // google.maps.event.addDomListener(window, 'load', initialize);
 
 
 ///// a function to take season sightings and get params for markers
   function placeSeasonMarkers(results, map) {
-    // sightingLatLng = new google.maps.LatLng(results["lat"], results["lng"]);
 
-// console.log(results["season_sightings"]);
     var seasonSightings = results["season_sightings"];
 
     for (s = 0; s < seasonSightings.length; s++) {
 
-      var sightingId = seasonSightings[s]["id"];
       var sightingFood = seasonSightings[s]["food"];
-      var sightingSeason = seasonSightings[s]["season"];
-      var sightingDescription = seasonSightings[s]["description"];
-      var sightingPhoto = seasonSightings[s]["photo_url"];
-
-
       var sightingLat = seasonSightings[s]["lat"];
       var sightingLng = seasonSightings[s]["lng"];
       var sightingLatLng = new google.maps.LatLng(sightingLat, sightingLng);
 
-      // var contentString = '<div id="infoContent">'+'<h4 id="firstHeading" class="firstHeading">'sightingFood'</h4>'+'<div id="bodyContent">'+'<p><b>'sightingSeason'</b></p></div></div>';
-      var contentString = '<div id="infoContent"><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
-
-      var infowindow = new google.maps.InfoWindow({
-      content: contentString
+      var marker = new google.maps.Marker({
+          position: sightingLatLng,
+          map: map,
+          title:sightingFood
       });
 
-    var marker = new google.maps.Marker({
-        position: sightingLatLng,
-        map: map,
-        title:sightingFood
-    });
+      marker.set("info", seasonSightings[s]);
 
-    google.maps.event.addListener(marker, 'click', function() {
-      console.log(this); // this does show each correct marker but triggers other
-       $('.modal-title').html(sightingFood);
-       $('.modal-body').html(contentString);
-      $('#pinModal').modal('toggle');
-      // infowindow.open(map,marker);
-    });
-
+      // add event listener to marker, which calls pinModal function to pop up modal
+      google.maps.event.addListener(marker, 'click', function() {
+        console.log(this); // this does show each correct marker but triggers other
+        pinModal(this.info)
+      });
     }
- 
-
   };
 
+////// function to call modal when pin is clicked
+// call it from event listener above??????????????????????????
+function pinModal(info) {
+
+      // get info about this sighting for modal
+      // $.ajax({
+      //   type: "GET",
+      //   url: "http://localhost:3000/searches",
+
+      //   data: {
+      //     sightingId: sightingId,
+      //   },
+
+      //   }).done(function(sighting){
+
+      // })
+
+    // var sightingId = info["id"];
+
+    var sightingFood = info["food"];
+    // var sightingSeason = info["season"];
+    var sightingDescription = info["description"];
+    var sightingPhoto = info["photo_url"];
+
+    var contentString = '<div id="infoContent"><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
+
+      $('.modal-title').html(sightingFood);
+      $('.modal-body').html(contentString);
+      $('#pinModal').modal('toggle');
+
+};
 
 
 

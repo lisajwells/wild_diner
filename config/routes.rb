@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'session' => 'session#create'
 
   post 'searches' => 'searches#new'
+  get 'searches' => 'searches#show'
   # get 'searches/:search' => 'searches#new'
   # post 'searches' => 'searches#create'
 
