@@ -2,6 +2,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Which Way to Wild Diner?</title>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc">
+    </script>
 
 </head>
 <body>
@@ -25,7 +28,7 @@
     <!-- End sightings_index -->
     <!-- Begin map view -->
       <div class="col-md-16 noshow" id="map_div">
-        <%= render partial: "map" %>
+        <div id="map-canvas"></div>
       </div>
     </div>  
 

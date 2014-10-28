@@ -54,23 +54,23 @@ Sighting.create ( {
 Sighting.create ({
     food: "mulberries",
     description: "Raspberry and blackberry fruits superficially resemble mulberries, but the fruits of these unrelated thorny canes grow upright, on receptacles, with no fruit stalks.",
-    location: "Hoboken, NJ",
+    location: "Rosendale, NY",
     season: "summer",
     photo_url: "http://3.bp.blogspot.com/-kpSZWr7V2ds/UQ3KMIur3UI/AAAAAAAAE5g/EHb-J8xvowc/s320/mulberry1.jpg",
     user_id: avery.id,
-    lat: 40.743991,
-    lng: -74.032363
+    lat: 41.844323,
+    lng: -74.08107
   })
 
 Sighting.create ({
     food: "wild ginger",
     description: "One of my favorite wild seasonings, wild ginger is a small plant with paired, heart-shaped leaves emerging from the ground. And hanging from the crotch between the two leaves youíll find a single 3-parted deep purple-brown flower.",
-    location: "Clifton, NJ",
+    location: "Annandale-On-Hudson, NY",
     season: "winter",
     photo_url: "http://d2yu7kf2857oao.cloudfront.net/wp-content/uploads/2010/11/asarum.jpg",
     user_id: avery.id,
-    lat: 40.858433,
-    lng: -74.163755
+    lat: 42.0128695,
+    lng: -73.9081901
 })
 
 Sighting.create ({
@@ -94,6 +94,63 @@ Sighting.create ({
     lat: 40.862322,
     lng: -73.633739
 })
+
+Sighting.create ({
+food: "pokeweed",
+description: "This reddish-stained non-woody plant grows from 4-8 feet tall and branches, like a tree, then dies to the ground, all in one season. Its oval, stalked, alternate, smooth-edged emerald green leaves get 8-10 inches long.",
+location: "Rhinebeck, NY",
+season: "winter",
+photo_url: "http://paganpages.org/content/wp-content/uploads/2013/07/pokeweed1-300x199.jpg",
+user_id: dave.id,
+lat: 41.931829,
+lng: -73.907437
+})
+
+Sighting.create ({
+food: "Epazote",
+description: "Epazote contains compounds which actually act as an anti-gas agent ( referred to as a carminative, which means it reduces gas) when cooked with beans. It's chief use was as an agent to expel intestinal hookworms (wormseed). According to Jessica Houdret (The Ultimate Book of Herbs and Herb Gardening) it has also been recommended for nervous disorders, asthma, and problems with menstruation). CAUTION: This herb is poisonous in large does.",
+location: "West Hurley, NY",
+season: "autumn",
+photo_url: "http://www.aerogardenblog.com/wp-content/uploads/2011/11/epazote.jpg",
+user_id: joe.id,
+lat: 41.997314,
+lng: -74.104864
+})
+
+Sighting.create ({
+food: "Black Walnut",
+description: "The black walnut tree (Juglans nigra) is a great hard wood tree that is grown in many home landscapes. Sometimes it is planted as a great shade tree and other times, for the wonderful nuts it produces. However, because of a thing called black walnut toxicity, some plants don’t do well when planted around the black walnut.",
+location: "Saugerties, NY",
+season: "winter",
+photo_url: "http://www.gardeningknowhow.com/wp-content/uploads/2009/08/black-walnut2-400x266.jpg",
+user_id: dave.id,
+lat: 42.077591,
+lng: -73.952913
+})
+
+Sighting.create ({
+food: "Cattails",
+description: "You can easily recognize a cattail stand: White, dense, furry, cigar-shaped overwintered seed heads stand atop very long, stout stalks, even as the young shoots first emerge in early spring.",
+location: "Tivoli, NY",
+season: "summer",
+photo_url: "http://www.tacticalintelligence.net/wp-content/uploads/2009/11/cattail.jpg",
+user_id: dave.id,
+lat: 42.058424,
+lng: -73.909300
+})
+
+Sighting.create ({
+food: "Dandelion",
+description: "The dandelion is a perennial, herbaceous plant with long, lance-shaped leaves. They're so deeply toothed, they gave the plant its name in Old French: Dent-de-lion means lion's tooth in Old French.",
+location: "West Hurley, NY",
+season: "spring",
+photo_url: "http://www.nrca-railroad.com/wp-content/uploads/2012/01/dandelion-1024x768.jpg",
+user_id: dave.id,
+lat: 41.997314,
+lng: -74.104864
+})
+
+
 
 
   # create_table "sightings", force: true do |t|
