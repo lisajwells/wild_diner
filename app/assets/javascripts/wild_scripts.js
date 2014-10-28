@@ -23,7 +23,7 @@ var users = [];
         placeSeasonMarkers(results, map);
       };
       // this is outside the function
-      google.maps.event.addDomListener(window, 'load', initialize);
+      // google.maps.event.addDomListener(window, 'load', initialize);
 
 
 ///// a function to take season sightings and get params for markers
@@ -124,7 +124,7 @@ $(function(){
 
     // make the report_or_hunt div hidden and the sightings_index div visible
     $('div#report_or_hunt').addClass('noshow');
-    $('div#sightings_index_main').removeClass('noshow');
+    $('div#sightings_index').removeClass('noshow');
   });
 
 	  
