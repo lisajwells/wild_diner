@@ -16,11 +16,10 @@ class SearchesController < ApplicationController
 		# latlong = { lat: lat, lng: lng }
 
 	# to get all sightings by season
-		sightings = Sighting.where(season: season)
+		season_sightings = Sighting.where(season: season)
 
 
-binding.pry
-		results = { lat: lat, lng: lng, sightings: sightings }
+		results = { lat: lat, lng: lng, season_sightings: season_sightings }
 		respond_to do |format|
       format.json { render :json => results.to_json }
     end    
