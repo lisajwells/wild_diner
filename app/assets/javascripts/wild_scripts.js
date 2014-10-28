@@ -1,29 +1,29 @@
 var users = [];
 
-  // this came from google map example and now i'm gonna mess with it 
-  // (feeding results lat long)
-  // should call from mapSearchButton block
-      function initialize(results) {
+// this came from google map example and now i'm gonna mess with it 
+// (feeding results lat long)
+// call from mapSearchButton block
+    function initialize(results) {
 
-        // lat long coming from results of mapSearchButton function to searches_controller
-        var lat = results["lat"];
-        var lng = results["lng"];
-        var myLatlng = new google.maps.LatLng(lat, lng);
+      // lat long coming from results of mapSearchButton function to searches_controller
+      var lat = results["lat"];
+      var lng = results["lng"];
+      var myLatlng = new google.maps.LatLng(lat, lng);
 
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 9
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-
-
-        //show map_div
-        $('div#map_div').removeClass('noshow');
-        placeSeasonMarkers(results, map);
+      var mapOptions = {
+        center: myLatlng,
+        zoom: 9
       };
-      // this is outside the function
-      // google.maps.event.addDomListener(window, 'load', initialize);
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+
+
+      //show map_div
+      $('div#map_div').removeClass('noshow');
+      placeSeasonMarkers(results, map);
+    };
+    // this is outside the function, now commented so the map waits to load until it's called
+    // google.maps.event.addDomListener(window, 'load', initialize);
 
 
 ///// a function to take season sightings and get params for markers
@@ -36,21 +36,34 @@ var users = [];
     for (s = 0; s < seasonSightings.length; s++) {
 
       var sightingId = seasonSightings[s]["id"];
+      var sightingFood = seasonSightings[s]["food"];
+      var sightingSeason = seasonSightings[s]["season"];
+
+
       var sightingLat = seasonSightings[s]["lat"];
       var sightingLng = seasonSightings[s]["lng"];
       var sightingLatLng = new google.maps.LatLng(sightingLat, sightingLng);
 
+      // var contentString = '<div id="infoContent">'+'<h4 id="firstHeading" class="firstHeading">'sightingFood'</h4>'+'<div id="bodyContent">'+'<p><b>'sightingSeason'</b></p></div></div>';
+      var contentString = '<p>content here,</p>';
+
+      var infowindow = new google.maps.InfoWindow({
+      content: contentString
+      });
+
     var marker = new google.maps.Marker({
         position: sightingLatLng,
         map: map,
-        title:"Hello World!"
+        title:sightingFood
     });
-  
-  
-      
-    //   // To add the marker to the map, use the 'map' property
-   
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+
     }
+ 
+
   };
 
 
