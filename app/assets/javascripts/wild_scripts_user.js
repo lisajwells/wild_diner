@@ -11,14 +11,15 @@ function getSightingsByUser() {
       var sightingFood = sightings[i]["food"];
       var sightingLocation = sightings[i]["location"];
       var sightingSeason = sightings[i]["season"];
+      var sightingDate = sightings[i]["created_at"];
 
       // we need the sighting obj id's in the db so that... 
       var sightingId = sightings[i]["id"]; 
 
               // ...we can add it to the li as a DOM id so  
               // when we go to delete it in the sighting view 
-      $ul.append("<li class='linkSighting' id=" + sightingId  + 
-        "><a href='#'><span class='bullet'>$utrif;</span>" + sightingFood + "</a></li>");
+      $ul.append("<li class='linkSighting' id='" + sightingId  + 
+        "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
 
     }
   })
@@ -28,10 +29,12 @@ function getSightingsByUser() {
   var goToUserShowButton = $('#found_button')
     goToUserShowButton.on("click", function(e){
     e.preventDefault();
-console.log('clicked')
 
-      //process results here
       getSightingsByUser();      
+
+    // make the report_or_hunt div hidden and the users_show div visible
+    $('div#report_or_hunt').addClass('noshow');
+    $('div#users_show').removeClass('noshow');
     });
 
 
