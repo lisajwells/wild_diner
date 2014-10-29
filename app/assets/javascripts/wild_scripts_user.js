@@ -9,6 +9,7 @@ function getSightingsByUser() {
 
     var sightings = data["user_sightings"];
     var $ul = $("#sightings_ul");
+    $ul.empty();
 
     for (i = 0; i < sightings.length; i++) {
       var sightingFood = sightings[i]["food"];
@@ -21,6 +22,7 @@ function getSightingsByUser() {
 
               // ...we can add it to the li as a DOM id so  
               // when we go to delete it in the sighting view 
+
       $ul.append("<li class='linkSighting' id='" + sightingId  + 
         "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
     }
@@ -118,8 +120,10 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
         },
       }).done(function(results){
 
-      // run getSightingsByUser with new info included? +++++++++++++++++++++++++++++++++
+      // run getSightingsByUser with new info included
       getSightingsByUser();
+      $('#sightingNewModal').modal('toggle');
+
     })
   });
 
@@ -128,6 +132,8 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
 });
 // end of onLoad
 
+
+// http://d28xhcgddm1buq.cloudfront.net/product-images/36-pvc-onion-grass-green-3.jpg
 
 
 

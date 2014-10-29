@@ -38,10 +38,10 @@ class SightingsController < ApplicationController
 
   Sighting.create ( {
       food: params[:food],
-      description: params[description],
+      description: params[:description],
       location: params[:location],
       season: params[:season],
-      photo_url: params[:photo_url],
+      photo_url: params[:photo],
       user_id: user.id,
       lat: lat,
       lng: lng
