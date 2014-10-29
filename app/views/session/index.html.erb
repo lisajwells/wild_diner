@@ -29,15 +29,42 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">What I Found</h4>
+        <h4 class="modal-title">What I found...</h4>
       </div>
       <div class="modal-body">
         <!-- form here to create new sighting -->
-        <p>description&hellip;</p>
+        <form role="form" id="new_sighting_form" action="/sightings/create" method="POST">
+
+          <div class="form-group">
+            <label for="food">Food</label>
+            <input type="text" name="food" class="form-control" id="foodname_inpt" placeholder="name of food">
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text"  name="location" class="form-control" id="location_inpt" placeholder="Nearby Town, ST">
+          </div>
+          <div class="form-group">
+            <label for="location">Season</label>
+            <input type="text"  name="season" class="form-control" id="season_inpt" placeholder="season">
+          </div>
+          <div class="form-group">
+            <label for="location">Photo</label>
+            <input type="text"  name="photo_url" class="form-control" id="photo_inpt" placeholder="web address that links to your photo">
+          </div>
+          <div class="form-group">
+            <label for="location">Description</label>
+            <input type="textarea"  name="description" class="form-control" id="description_inpt" placeholder="Talk about your food find">
+          </div>
+          <button type="submit" class="btn btn-primary" name="new_sighting_btn" id="sighting_submit">Report It!</button>
+          <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+        </form>
+
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
   <!-- header -->
   <div class="container">

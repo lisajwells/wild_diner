@@ -1,4 +1,5 @@
-var users = [];
+// scripts for the sessions index view and the map view
+
 
 // this came from google map example and now i'm gonna mess with it 
 // (feeding results lat long)
@@ -112,12 +113,6 @@ $(function(){
       initialize(results);      
     })
   });
-
-
-
-
-
-
 
 
 

@@ -1,3 +1,6 @@
+// scripts for the users show view (sightings and new sightings)
+
+
 function getSightingsByUser() {
   $.ajax({
     url: '/users',
@@ -113,13 +116,6 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
 // undefined
 // parent.attr('id')
 // "29"
-
-
-
-
-
-
-
 
 
 
