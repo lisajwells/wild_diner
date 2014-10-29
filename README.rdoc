@@ -9,6 +9,12 @@ Wild Diner is building a community of wild food enthusiasts so users can find fo
 Wild Diner was developed by Lisa Wells as the final project in the General Assembly Web Development Immersive course.
 
 http://wilddiner.herokuapp.com/
+
 https://trello.com/b/6bmtPRSz/project-four-wild-diner
+
+Technologies used include: Ruby 2.1.2, Rails 4.1.4, Javascript, JQuery, Bootstrap, Postgresql, and ActiveRecord. It consumes the GoogleMaps Javascript API.
+
+
+
 
 
