@@ -109,7 +109,7 @@ $(function(){
       },
     }).done(function(results){
 
-      //process results here (i think i'll call a function that gets them to get the map)
+      //process results here (a function that gets the map)
       initialize(results);      
     })
   });

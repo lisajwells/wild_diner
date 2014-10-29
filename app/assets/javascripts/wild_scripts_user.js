@@ -69,7 +69,7 @@ $(function(){
     $('div#report_or_hunt').addClass('noshow');
     $('div#users_show').removeClass('noshow');
     });
-
+//
 
 // event listener for <li>s to trigger sightings_show view
 $( "#sightings_ul" ).on( "click", "a", function( event ) {
@@ -89,12 +89,42 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
       e.preventDefault();
 
       $('#sightingNewModal').modal('toggle');
-      // $('#pinModal').modal('toggle');
 
+  });
+//
+
+// button on id="new_sighting_form" to submit form and create new sighting
+  var sightingCreateButton = $('#sighting_submit');
+    sightingCreateButton.on("click", function(e){
+      e.preventDefault();
+
+      // collect parameters from new_sighting_form
+      var food = $('#foodname_inpt').val();
+      var location = $('#location_inpt').val();
+      var season = $('#season_inpt').val();
+      var photo = $('#photo_inpt').val();
+      var description = $('#description_inpt').val();
+
+      // submit info to ruby to call googlemaps to convert to latLng and save sighting 
+      $.ajax({
+        type: "POST",
+        url: "/sightings",
+        data: {
+          food: food,
+          location: location,
+          season: season,
+          photo: photo,
+          description: description
+        },
+      }).done(function(results){
+
+      // run getSightingsByUser with new info included? +++++++++++++++++++++++++++++++++
+      getSightingsByUser();
     })
+  });
 
 
-
+////////////////
 });
 // end of onLoad
 

@@ -15,7 +15,45 @@ class SightingsController < ApplicationController
 
   def new
 
-    
+  end
+
+# to create new sighting
+  def create
+
+    food = params[:food]
+    location = params[:location]
+    season = params[:season]
+    photo_url = params[:photo]
+    description = params[:description]
+
+    user = User.find_by(id: session[:user_id])
+
+    search_location = location.tr(' ', '+s')
+
+ # to get lat long
+    response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
+
+    lat = response_google["results"][0]["geometry"]["location"]["lat"]
+    lng = response_google["results"][0]["geometry"]["location"]["lng"]
+
+  Sighting.create ( {
+      food: params[:food],
+      description: params[description],
+      location: params[:location],
+      season: params[:season],
+      photo_url: params[:photo_url],
+      user_id: user.id,
+      lat: lat,
+      lng: lng
+    } )
+
+    user_sightings = Sighting.where(user_id: session[:user_id])
+
+    results = { user_sightings: user_sightings }
+
+    respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
 
   end
 
