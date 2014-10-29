@@ -45,7 +45,6 @@ function displaySighting(sightingId) {
     var date = results["sighting"]["created_at"];
     var description = results["sighting"]["description"];
 
-    // $("#users_show").removeClass('noshow');
     $("#sighting_show").removeClass('noshow');
     $(".show_sighting_photo").html("<img src='" + photo + "'>");
     $(".show_sighting_info").html("<p><b>" + food + "</b></p><p>" + location + "</p><p>" + season + "</p><p>" + date + "</p><p>" + description + "</p>" );

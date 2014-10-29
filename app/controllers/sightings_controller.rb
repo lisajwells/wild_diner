@@ -4,8 +4,8 @@ class SightingsController < ApplicationController
   def index
 
     sighting_id = params[:sightingId]
-
-    sighting = Sighting.find_by(user_id: sighting_id)
+    
+    sighting = Sighting.find_by(id: sighting_id)
     
     results = { sighting: sighting }
 
