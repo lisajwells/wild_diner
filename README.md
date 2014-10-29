@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wild Diner caters to the growing community of people who forage for raw food in the wild. (This group includes nature lovers and foodies.) 
 
-Things you may want to cover:
+The application provides a platform for foragers to share food sightings, allowing other members of the community to know what to search for in a given region and season. (This is in contrast to existing foraging apps, which are curated databases of plant information, and not location-generated.) 
 
-* Ruby version
+Wild Diner is building a community of wild food enthusiasts so users can find food wherever they are.
 
-* System dependencies
+Wild Diner was developed by Lisa Wells as the final project in the General Assembly Web Development Immersive course.
 
-* Configuration
+http://wilddiner.herokuapp.com/
 
-* Database creation
+https://trello.com/b/6bmtPRSz/project-four-wild-diner
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Technologies used include: Ruby 2.1.2, Rails 4.1.4, Javascript, JQuery, Bootstrap, Postgresql, and ActiveRecord. It consumes the GoogleMaps Javascript API.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+
