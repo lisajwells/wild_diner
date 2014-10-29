@@ -145,7 +145,12 @@ a .sightingFood:hover {
 }
 
 div.show_sighting_photo img {
-  width: 120px;
+  width: 170px;
+}
+
+#sighting_show {
+  border: 1px solid #e44424; 
+  padding-top: 12px;
 }
 
 div.show_sighting_info p {

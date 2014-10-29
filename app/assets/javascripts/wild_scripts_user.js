@@ -38,24 +38,20 @@ function displaySighting(sightingId) {
   }).done(function(results){
 
     var photo = results["sighting"]["photo_url"];
+
     var food = results["sighting"]["food"];
     var location = results["sighting"]["location"];
     var season = results["sighting"]["season"];
     var date = results["sighting"]["created_at"];
     var description = results["sighting"]["description"];
 
-    $(".show_sighting_photo").append("<img src='" + photo + "'>");
-
-
-      // $ul.append("<li class='linkSighting' id='" + sightingId  + 
-      //   "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
-
+    // $("#users_show").removeClass('noshow');
+    $("#sighting_show").removeClass('noshow');
+    $(".show_sighting_photo").html("<img src='" + photo + "'>");
+    $(".show_sighting_info").html("<p><b>" + food + "</b></p><p>" + location + "</p><p>" + season + "</p><p>" + date + "</p><p>" + description + "</p>" );
 
   })
-
 };
-
-
 
 /////////////////// on load
 $(function(){
