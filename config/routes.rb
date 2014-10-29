@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 #                 PATCH  /sightings/:id(.:format)      sightings#update
 #                 PUT    /sightings/:id(.:format)      sightings#update
 #                 DELETE /sightings/:id(.:format)      sightings#destroy
+
 #           users GET    /users(.:format)              users#index
 #                 POST   /users(.:format)              users#create
 #        new_user GET    /users/new(.:format)          users#new

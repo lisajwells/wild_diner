@@ -50,7 +50,12 @@
 
     <!-- begin users_show -->
     <div class="row noshow" id="users_show">
+      <div class="col-md-8" id="my_sightings">
         <%= render partial: "users/users_show" %>
+      </div>
+      <div class="col-md-16" id="sighting_show">
+        <%= render partial: "sightings/show" %>
+      </div>
     </div>
 
     <!-- end users_show -->

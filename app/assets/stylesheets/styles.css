@@ -140,7 +140,7 @@ nav.topnav ul a:hover {
   font-weight: bold;
 }
 
-#users_show ul li:hover {
+a .sightingFood:hover {
   color: #096D91;
 }
 
