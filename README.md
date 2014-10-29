@@ -12,6 +12,9 @@ http://wilddiner.herokuapp.com/
 
 https://trello.com/b/6bmtPRSz/project-four-wild-diner
 
+/forage_erd.pdf
+/wild_diner_wireframe.png
+
 Technologies used include: Ruby 2.1.2, Rails 4.1.4, Javascript, JQuery, Bootstrap, Postgresql, and ActiveRecord. It consumes the GoogleMaps Javascript API.
 
 
