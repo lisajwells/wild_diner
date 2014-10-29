@@ -114,7 +114,8 @@ $(function(){
     })
   });
 
-
+///// topnav -- sightings should go to map view and my_sightings should go to users
+// ????? how to tell it what to hide when it could be clicked from anywhere ***************
 
 
 

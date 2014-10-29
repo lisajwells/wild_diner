@@ -34,6 +34,21 @@ body {
   z-index: -1;
 }
 
+.scatter_img_epazote {
+  position: absolute;
+  left: 120px;
+  top: 320px;
+  z-index: -1;
+}
+
+.scatter_img_wildginger {
+  position: absolute;
+  right: 90px;
+  top: 230px;
+  width: 160px;
+  z-index: -1;
+}
+
 .page-header {
   border-bottom: 1px solid #e44424;
 }
