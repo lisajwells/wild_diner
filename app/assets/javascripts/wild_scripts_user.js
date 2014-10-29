@@ -55,9 +55,20 @@ function displaySighting(sightingId) {
 /////////////////// on load
 $(function(){
 
+///// button on found_or_hunt page to call getSightingsByUser function
+  var goToUserShowButton = $('#found_button');
+    goToUserShowButton.on("click", function(e){
+    e.preventDefault();
+
+      getSightingsByUser();      
+
+    // make the report_or_hunt div hidden and the users_show div visible
+    $('div#report_or_hunt').addClass('noshow');
+    $('div#users_show').removeClass('noshow');
+    });
+
 
 // event listener for <li>s to trigger sightings_show view
-
 $( "#sightings_ul" ).on( "click", "a", function( event ) {
     event.preventDefault();
 
@@ -69,19 +80,15 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
 });
 //
 
+// button on user view to bring up sighting_new modal
+  var sightingNewButton = $('#sighting_new_btn');
+    sightingNewButton.on("click", function(e){
+      e.preventDefault();
 
+      $('#sightingNewModal').modal('toggle');
+      // $('#pinModal').modal('toggle');
 
-///// button on found_or_hunt page to call getSightingsByUser function
-  var goToUserShowButton = $('#found_button')
-    goToUserShowButton.on("click", function(e){
-    e.preventDefault();
-
-      getSightingsByUser();      
-
-    // make the report_or_hunt div hidden and the users_show div visible
-    $('div#report_or_hunt').addClass('noshow');
-    $('div#users_show').removeClass('noshow');
-    });
+    })
 
 
 
