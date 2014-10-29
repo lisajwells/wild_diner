@@ -20,15 +20,60 @@ function getSightingsByUser() {
               // when we go to delete it in the sighting view 
       $ul.append("<li class='linkSighting' id='" + sightingId  + 
         "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
-
     }
   })
+};
+
+///// displaySighting function to be called on event listener for sightings_ul
+// argument foodSighting should come from "this" on event listener
+
+function displaySighting(sightingId) {
+  // call the server and get the sighting that matches this id
+  $.ajax({
+    url: '/sightings', 
+    type: 'GET',
+    data: {
+      sightingId: sightingId
+    },
+  }).done(function(results){
+
+    var photo = results["sighting"]["photo_url"];
+    var food = results["sighting"]["food"];
+    var location = results["sighting"]["location"];
+    var season = results["sighting"]["season"];
+    var date = results["sighting"]["created_at"];
+    var description = results["sighting"]["description"];
+
+    $(".show_sighting_photo").append("<img src='" + photo + "'>");
+
+
+      // $ul.append("<li class='linkSighting' id='" + sightingId  + 
+      //   "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
+
+
+  })
+
 };
 
 
 
 /////////////////// on load
 $(function(){
+
+
+// event listener for <li>s to trigger sightings_show view
+
+$( "#sightings_ul" ).on( "click", "a", function( event ) {
+    event.preventDefault();
+
+    var sightingId = $(this).closest('[id]').attr('id')
+    console.log(sightingId);
+
+    //call the function that finds the sighting and displays its info
+    displaySighting(sightingId);
+});
+//
+
 
 
 ///// button on found_or_hunt page to call getSightingsByUser function
@@ -45,23 +90,35 @@ $(function(){
 
 
 
-
-// event listener for <li>s to trigger sightings_show view
-
-$( "#sightings_ul" ).on( "click", "a", function( event ) {
-    event.preventDefault();
-    
-    var foodSighting = $( this ).text() ;
-    console.log(foodSighting);
-    // console.log(typeof foodSighting);
-    // return foodSighting;
-
-    //call the function that finds the sighting and displays its info
-    displaySighting(foodSighting);
-});
-//
-
-
 });
 // end of onLoad
+
+
+
+
+// <span class=​"sightingFood">​wild strawberry​</span>​
+// test.parentElement
+// <a href=​"#">​…​</a>​
+// $(test).parent()
+// [<a href=​"#">​…​</a>​]
+// $(test).parent().parent()
+// [<li class=​"linkSighting" id=​"29">​…​</li>​]
+// $(test).parent().parent().id
+// undefined
+// parent = $(test).parent().parent()
+// [<li class=​"linkSighting" id=​"29">​…​</li>​]
+// parent.id
+// undefined
+// parent.attr('id')
+// "29"
+
+
+
+
+
+
+
+
+
+
 

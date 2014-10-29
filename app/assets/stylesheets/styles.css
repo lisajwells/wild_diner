@@ -144,7 +144,13 @@ a .sightingFood:hover {
   color: #096D91;
 }
 
+div.show_sighting_photo img {
+  width: 120px;
+}
 
+div.show_sighting_info p {
+
+}
 
 .footer {
   background-color: #237795;

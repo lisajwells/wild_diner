@@ -1,24 +1,22 @@
 class SightingsController < ApplicationController
 
+  # this is where javascript comes to get sighting by id info
+  def index
+
+    sighting_id = params[:sightingId]
+
+    sighting = Sighting.find_by(user_id: sighting_id)
+    
+    results = { sighting: sighting }
+
+    respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
+
+
+  end
 
 end
-
-
-
-
-
-
-# else if (req.url.split('?')[0] == "/city") {
-#     var parsedRequest = url.parse(req.url, true);
-#     var city = parsedRequest.query.city;
-#     var gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address="
-#       + city + "&key=AIzaSyBdcPMR6ZpFd7q-bh9oZo30YK0peT8CkGc";
-
-#     request(gmaps_url, function (err, res, body) {
-#       var json = JSON.parse(body);
-#       var loc = json.results[0].geometry.location
-#       var lat = loc["lat"];
-#       var lng = loc["lng"];
 
 
 
