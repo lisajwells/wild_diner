@@ -153,10 +153,15 @@ nav.topnav ul a:hover {
 #users_show li .sightingFood {
   font-size: 16px;
   font-weight: bold;
+  color: #096D91;
 }
 
-a .sightingFood:hover {
-  color: #096D91;
+.sightingFood a:hover {
+  color: red;
+}
+
+#my_sightings {
+  margin-bottom: 20px:;
 }
 
 div.show_sighting_photo img {

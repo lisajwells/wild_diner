@@ -123,7 +123,7 @@ description: "The black walnut tree (Juglans nigra) is a great hard wood tree th
 location: "Saugerties, NY",
 season: "winter",
 photo_url: "http://www.gardeningknowhow.com/wp-content/uploads/2009/08/black-walnut2-400x266.jpg",
-user_id: dave.id,
+user_id: avery.id,
 lat: 42.077591,
 lng: -73.952913
 })
@@ -145,7 +145,7 @@ description: "The dandelion is a perennial, herbaceous plant with long, lance-sh
 location: "West Hurley, NY",
 season: "spring",
 photo_url: "http://www.nrca-railroad.com/wp-content/uploads/2012/01/dandelion-1024x768.jpg",
-user_id: dave.id,
+user_id: joe.id,
 lat: 41.997314,
 lng: -74.104864
 })
