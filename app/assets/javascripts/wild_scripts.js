@@ -60,13 +60,22 @@ function pinModal(info) {
     var userId = info["user_id"];
 
     // go to server to get username from user_id
+    $.ajax({
+      type: "GET",
+      url: "/searches",
+      data: {
+        userId: userId,
+      },
+    }).done(function(result){
+      var username = result["username"]
 
-    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>'+userId+'</p></div>';
+    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>'+userId+'</p><p>'+username+'</p></div>';
 
       $('.modal-title').html(sightingFood);
       $('.modal-body').html(contentString);
       $('#pinModal').modal('toggle');
 
+    })
 };
 
 

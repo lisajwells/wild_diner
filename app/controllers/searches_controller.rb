@@ -25,30 +25,21 @@ class SearchesController < ApplicationController
   end  
 
 
-  # to get sighting info from db from pinModal function
-  # def show
-  #   sighting = Sighting.where(id: sightingId)
+  # to get sighting info from db from pinModal function ---not in use
+  # to get username from user_id for pinModal show
+  def show
+    userId = params[:userId]
+    user = User.find_by(id: userId)
+    username = user.username
 
-  #   respond_to do |format|
-  #     format.json { render :json => sighting.to_json }
-  #   end    
+    result = { username: username }
+
+    respond_to do |format|
+      format.json { render :json => result.to_json }
+    end    
      
-  # end  
+  end  
 
 end
 
 
-
-#### from freeDay
- # create zipcode and dates for api calls
-  # zipcode = params[:zipcode]
-  # date = params[:date]
-
-  # # converts zipcode to lat long for eventbrite api
-  # longlat = HTTParty.get("http://zipcodedistanceapi.redline13.com/rest/hDnZEdMTiTMIdufkYObXQUY134PG6pnn2KnGYaAh4nZhRfCQ3NNTIMVLQKrW9Okc/info.json/#{zipcode}/degrees")
-
-  # lat = longlat["lat"]
-  # long = longlat["lng"]
-
-  # # get events
-  # response = HTTParty.get("https://www.eventbriteapi.com/v3/events/search/?location.within=10mi&location.latitude=#{lat}&location.longitude=#{long}&start_date.range_start=#{date}T01%3A30%3A42Z&start_date.range_end=#{date}T23%3A30%3A42Z&token=3BS25F7EIU2IIB4YWQWF")
