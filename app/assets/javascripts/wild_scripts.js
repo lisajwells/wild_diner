@@ -57,8 +57,9 @@ function pinModal(info) {
     var sightingFood = info["food"];
     var sightingDescription = info["description"];
     var sightingPhoto = info["photo_url"];
+    var userId = info["user_id"];
 
-    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p></div>';
+    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>'+userId+'</p></div>';
 
       $('.modal-title').html(sightingFood);
       $('.modal-body').html(contentString);
