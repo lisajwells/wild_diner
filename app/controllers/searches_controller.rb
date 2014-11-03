@@ -26,14 +26,14 @@ class SearchesController < ApplicationController
 
 
   # to get sighting info from db from pinModal function
-  def show
-    sighting = Sighting.where(id: sightingId)
+  # def show
+  #   sighting = Sighting.where(id: sightingId)
 
-    respond_to do |format|
-      format.json { render :json => sighting.to_json }
-    end    
+  #   respond_to do |format|
+  #     format.json { render :json => sighting.to_json }
+  #   end    
      
-  end  
+  # end  
 
 end
 

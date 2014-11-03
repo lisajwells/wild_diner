@@ -139,7 +139,7 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
     $('div#report_or_hunt').addClass('noshow');
     $('div#sightings_index').removeClass('noshow');
     $('div#users_show').addClass('noshow');
-
+    $('div#map_div').addClass('noshow');
   })
 
 
@@ -152,6 +152,7 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
     $('div#sightings_index').addClass('noshow');
     $('div#users_show').removeClass('noshow');
     $('div#map_div').addClass('noshow');
+    $("#sighting_show").addClass('noshow');
     getSightingsByUser();
 
   })

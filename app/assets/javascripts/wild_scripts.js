@@ -59,6 +59,8 @@ function pinModal(info) {
     var sightingPhoto = info["photo_url"];
     var userId = info["user_id"];
 
+    // go to server to get username from user_id
+
     var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>'+userId+'</p></div>';
 
       $('.modal-title').html(sightingFood);
@@ -105,7 +107,7 @@ $(function(){
         searchLocation: searchLocation
       },
     }).done(function(results){
-
+// results include user_id -- must get username to display it in pinModal
       //process results here (a function that gets the map)
       initialize(results);      
     })
