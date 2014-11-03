@@ -5,16 +5,6 @@ body {
   font-family: 'Roboto Slab', serif;
 }
 
-#map-canvas { 
-  height: 380px; 
-  width: 100%;
-  border: 2px solid #e44424;
-}
-
-#map_div { 
-  padding-bottom: 30px;
-}
-
 .noshow {
   display: none;
 }
@@ -25,28 +15,6 @@ body {
 
 .right {
   text-align: right;
-}
-
-.scatter_img {
-  position: absolute;
-  left: 120px;
-  top: 220px;
-  z-index: -1;
-}
-
-.scatter_img_epazote {
-  position: absolute;
-  left: 120px;
-  top: 320px;
-  z-index: -1;
-}
-
-.scatter_img_wildginger {
-  position: absolute;
-  right: 90px;
-  top: 230px;
-  width: 160px;
-  z-index: -1;
 }
 
 .page-header {
@@ -134,6 +102,16 @@ nav.topnav ul a:hover {
 
 #login_submit:hover {
   background-color: #237795;
+}
+
+#map-canvas { 
+  height: 380px; 
+  width: 100%;
+  border: 2px solid #e44424;
+}
+
+#map_div { 
+  padding-bottom: 30px;
 }
 
 #users_show ul {

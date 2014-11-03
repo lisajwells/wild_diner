@@ -1,0 +1,21 @@
+.scatter_img {
+  position: relative;
+  z-index: -1;
+}
+
+.walnut {
+  left: -100px;
+  top: -30px;
+}
+
+.scatter_img_epazote {
+  left: 120px;
+  top: 320px;
+}
+
+.scatter_img_wildginger {
+  right: 90px;
+  top: 230px;
+  width: 160px;
+}
+
