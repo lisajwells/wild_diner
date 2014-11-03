@@ -52,7 +52,7 @@ function displaySighting(sightingId) {
 
     $("#sighting_show").removeClass('noshow');
     $(".show_sighting_photo").html("<img src='" + photo + "'>");
-    $(".show_sighting_info").html("<p><b>" + food + "</b></p><p>" + location + "</p><p>" + season + "</p><p>" + date + "</p><p>" + description + "</p>" );
+    $(".show_sighting_info").html("<p><b class='sightingFood'>" + food + "</b></p><p><b>location: </b>" + location + "</p><p><b>season: </b>" + season + "</p><p><b>date: </b>" + date + "</p><p><b>description: </b>" + description + "</p>" );
 
   })
 };
@@ -126,6 +126,36 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
 
     })
   });
+
+
+
+
+///// topnav -- sightings should go to map view and my_sightings should go to users
+  var topNavSightings = $('#topnav_sightings')
+  topNavSightings.on('click', function(e){
+    e.preventDefault();
+
+    // make the sightings div shown and all others hidden
+    $('div#report_or_hunt').addClass('noshow');
+    $('div#sightings_index').removeClass('noshow');
+    $('div#users_show').addClass('noshow');
+
+  })
+
+
+  var topNavMySightings = $('#topnav_my_sightings')
+  topNavMySightings.on('click', function(e){
+    e.preventDefault();
+
+    // make the my_sightings div shown and all others hidden
+    $('div#report_or_hunt').addClass('noshow');
+    $('div#sightings_index').addClass('noshow');
+    $('div#users_show').removeClass('noshow');
+    $('div#map_div').addClass('noshow');
+    getSightingsByUser();
+
+  })
+
 
 
 ////////////////

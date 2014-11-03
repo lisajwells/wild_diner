@@ -1,7 +1,5 @@
 // scripts for the sessions index view and the map view
 
-
-// this came from google map example and now i'm gonna mess with it 
 // (feeding results lat long)
 // call from mapSearchButton block
     function initialize(results) {
@@ -17,7 +15,6 @@
       };
       var map = new google.maps.Map(document.getElementById('map-canvas'),
           mapOptions);
-
 
       //show map_div
       $('div#map_div').removeClass('noshow');
@@ -61,7 +58,7 @@ function pinModal(info) {
     var sightingDescription = info["description"];
     var sightingPhoto = info["photo_url"];
 
-    var contentString = '<div id="infoContent"><p>'+sightingDescription+'</p><p><img src="'+sightingPhoto+'"></p></div>';
+    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p></div>';
 
       $('.modal-title').html(sightingFood);
       $('.modal-body').html(contentString);
@@ -102,7 +99,6 @@ $(function(){
     $.ajax({
       type: "POST",
       url: "/searches",
-
       data: {
         season: season,
         searchLocation: searchLocation
@@ -115,8 +111,7 @@ $(function(){
   });
 
 ///// topnav -- sightings should go to map view and my_sightings should go to users
-// ????? how to tell it what to hide when it could be clicked from anywhere ***************
-
+// it's in wild_scripts_user.js in order to run sightings by user function
 
 
 });

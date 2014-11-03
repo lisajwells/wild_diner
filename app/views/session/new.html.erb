@@ -8,7 +8,21 @@
   <!-- header -->
   <div class="container">
 
-		<%= render partial: "shared/header" %>
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Wild Diner</h2>
+    </div>
+    <div class="col-md-12">
+      <!-- <nav class="topnav"> -->
+        <!-- <ul> -->
+          <!-- <a href=""><li>Hunt-or-Found</li></a> -->
+          <!-- <a href=""><li>Sightings</li></a><a href=""><li>My Sightings</li></a> -->
+        <!-- </ul> -->
+      <!-- </nav> -->
+    </div>
+  </div>    
+</div>
 
     <!-- Begin page content -->
 
@@ -33,9 +47,8 @@
       <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
 
     </form>
-
-<%= image_tag "epazote-300.png", class: "scatter_img_epazote" %>
-<%= image_tag "wild-ginger.png", class: "scatter_img_wildginger" %>
+    <img alt="epazote" src="/assets/epazote-300.png" class="scatter_img" id="epazote"/>
+    <img alt="wild_ginger" src="/assets/wild-ginger.png" class="scatter_img" id="wildginger"/>
 
 
   </div>

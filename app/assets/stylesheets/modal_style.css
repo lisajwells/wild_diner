@@ -5,10 +5,21 @@
 
 .modal-content img {
   width: 200px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .modal-header {
 border-bottom: 1px solid #e44424;
 }
+
+.modal-body {
+  overflow: hidden;
+}
+
+#pinModal img {
+  width: 200px;
+  border-radius: 8px;
+  float: left;
+  margin-right: 10px;
+} 
 
