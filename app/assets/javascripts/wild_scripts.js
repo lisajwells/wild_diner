@@ -69,7 +69,7 @@ function pinModal(info) {
     }).done(function(result){
       var username = result["username"]
 
-    var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>'+userId+'</p><p>'+username+'</p></div>';
+      var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>&mdash;sighted by '+username+'</p></div>';
 
       $('.modal-title').html(sightingFood);
       $('.modal-body').html(contentString);
