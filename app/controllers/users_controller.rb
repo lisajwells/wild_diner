@@ -3,17 +3,24 @@ class UsersController < ApplicationController
   def new
     render :new
   end
-  
+
 
   def create
-
+    user = User.create({
+      username: params[:username],
+      email: params[:email],
+      password: params[:password],
+      photo: params[:photo],
+      bio: params[:bio],
+    })
+    
+      # redirect to login
+      redirect_to '/session/new'
   end
 
 
   def index
     user_sightings = Sighting.where(user_id: session[:user_id])
-
-    # data = { id: id, username: username, food: food, location: location, photo_url: photo_url, season: season, description: description, created_at: created_at }
 
     data = { user_sightings: user_sightings }
 

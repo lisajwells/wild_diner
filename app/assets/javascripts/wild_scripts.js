@@ -123,37 +123,37 @@ $(function(){
   });
 
 
-/////****this is dummy now copied to alter+++++ button on id="new_sighting_form" to submit form and create new sighting
-  // var sightingCreateButton = $('#sighting_submit');
-  //   sightingCreateButton.on("click", function(e){
-  //     e.preventDefault();
+///// button on id="signup_form" to submit form and create new user -- redirect to login after
+  var userCreateButton = $('#signup_submit');
+    userCreateButton.on("click", function(e){
+      e.preventDefault();
 
-  //     // collect parameters from new_sighting_form
-  //     var food = $('#foodname_inpt').val();
-  //     var location = $('#location_inpt').val();
-  //     var season = $('#season_inpt').val();
-  //     var photo = $('#photo_inpt').val();
-  //     var description = $('#description_inpt').val();
+      // collect parameters from new_user_form
+      var username = $('#signup_username').val();
+      var email = $('#signup_email').val();
+      var password = $('#signup_password').val();
+      var photo = $('#signup_photo').val();
+      var bio = $('#signup_bio').val();
+      // submit info to ruby to call create user 
+      $.ajax({
+        type: "POST",
+        url: "/users",
+        data: {
+          username: username,
+          email: email,
+          password: password,
+          photo: photo,
+          bio: bio
+        },
+      }).done(function(results){
+// ++++
 
-  //     // submit info to ruby to call googlemaps to convert to latLng and save sighting 
-  //     $.ajax({
-  //       type: "POST",
-  //       url: "/sightings",
-  //       data: {
-  //         food: food,
-  //         location: location,
-  //         season: season,
-  //         photo: photo,
-  //         description: description
-  //       },
-  //     }).done(function(results){
+      // run getSightingsByUser with new info included
+      getSightingsByUser();
+      $('#sightingNewModal').modal('toggle');
 
-  //     // run getSightingsByUser with new info included
-  //     getSightingsByUser();
-  //     $('#sightingNewModal').modal('toggle');
-
-  //   })
-  // });
+    })
+  });
 
 
 
