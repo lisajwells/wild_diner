@@ -5,7 +5,13 @@ class SessionController < ApplicationController
   end
 
   def index
-    render :index
+    @user = User.find_by(id: session[:user_id])
+    if @user
+      render :index
+    else
+      @error = true
+      render :new
+    end
   end
 
   def create
@@ -13,7 +19,6 @@ class SessionController < ApplicationController
     
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-
       render :index
     else 
       @error = true

@@ -33,6 +33,7 @@ function getSightingsByUser() {
 // argument foodSighting should come from "this" on event listener
 
 function displaySighting(sightingId) {
+
   // call the server and get the sighting that matches this id
   $.ajax({
     url: '/sightings', 
@@ -42,6 +43,7 @@ function displaySighting(sightingId) {
     },
   }).done(function(results){
 
+
     var photo = results["sighting"]["photo_url"];
 
     var food = results["sighting"]["food"];
@@ -49,15 +51,15 @@ function displaySighting(sightingId) {
     var season = results["sighting"]["season"];
     var date = results["sighting"]["created_at"];
     var description = results["sighting"]["description"];
-
     $("#sighting_show").removeClass('noshow');
-    $(".show_sighting_photo").html("<img src='" + photo + "'>");
-// debugger    
-// this conditional is not the right test somehow *************** !!!!!!!!!!!!!!!!!!!
-// it works unless you click a noshow and then click a show
-    // if (photo == ""){
-    //   $(".show_sighting_photo").addClass('noshow')
-    // }
+    
+    if (photo.length > 0){
+      $(".show_sighting_photo").removeClass('noshow')
+       $(".show_sighting_photo").html("<img src='" + photo + "'>");
+    } else {
+       $(".show_sighting_photo").addClass('noshow')
+    }
+
     $(".show_sighting_info").html("<p><b class='sightingFood'>" + food + "</b></p><p><b>location: </b>" + location + "</p><p><b>season: </b>" + season + "</p><p><b>date: </b>" + date + "</p><p><b>description: </b>" + description + "</p>" );
 
   })
@@ -69,6 +71,7 @@ $(function(){
 ///// button on found_or_hunt page to call getSightingsByUser function
   var goToUserShowButton = $('#found_button');
     goToUserShowButton.on("click", function(e){
+
     e.preventDefault();
 
       getSightingsByUser();      
@@ -124,7 +127,6 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
           description: description
         },
       }).done(function(results){
-
       // run getSightingsByUser with new info included
       getSightingsByUser();
       $('#sightingNewModal').modal('toggle');

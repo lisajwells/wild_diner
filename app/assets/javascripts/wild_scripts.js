@@ -123,37 +123,6 @@ $(function(){
   });
 
 
-///// button on id="signup_form" to submit form and create new user -- redirect to login after
-  var userCreateButton = $('#signup_submit');
-    userCreateButton.on("click", function(e){
-      e.preventDefault();
-
-      // collect parameters from new_user_form
-      var username = $('#signup_username').val();
-      var email = $('#signup_email').val();
-      var password = $('#signup_password').val();
-      var photo = $('#signup_photo').val();
-      var bio = $('#signup_bio').val();
-      // submit info to ruby to call create user 
-      $.ajax({
-        type: "POST",
-        url: "/users",
-        data: {
-          username: username,
-          email: email,
-          password: password,
-          photo: photo,
-          bio: bio
-        },
-      }).done(function(results){
-// ++++
-
-      // run getSightingsByUser with new info included
-      getSightingsByUser();
-      $('#sightingNewModal').modal('toggle');
-
-    })
-  });
 
 
 

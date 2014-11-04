@@ -1,24 +1,5 @@
 class UsersController < ApplicationController
 
-  def new
-    render :new
-  end
-
-
-  def create
-    user = User.create({
-      username: params[:username],
-      email: params[:email],
-      password: params[:password],
-      photo: params[:photo],
-      bio: params[:bio],
-    })
-    
-      # redirect to login
-      redirect_to '/session/new'
-  end
-
-
   def index
     user_sightings = Sighting.where(user_id: session[:user_id])
 
@@ -28,6 +9,25 @@ class UsersController < ApplicationController
       format.json { render :json => data.to_json }
     end    
   end
+
+  def new
+    render :new
+  end
+
+
+  def create
+    User.create({
+      username: params[:username],
+      email: params[:email],
+      password: params[:password],
+      photo: params[:photo],
+      bio: params[:bio],
+    })
+
+      redirect_to "/session/new"
+  end
+
+
 
 
 end
