@@ -52,6 +52,12 @@ function displaySighting(sightingId) {
 
     $("#sighting_show").removeClass('noshow');
     $(".show_sighting_photo").html("<img src='" + photo + "'>");
+// debugger    
+// this conditional is not the right test somehow *************** !!!!!!!!!!!!!!!!!!!
+// it works unless you click a noshow and then click a show
+    // if (photo == ""){
+    //   $(".show_sighting_photo").addClass('noshow')
+    // }
     $(".show_sighting_info").html("<p><b class='sightingFood'>" + food + "</b></p><p><b>location: </b>" + location + "</p><p><b>season: </b>" + season + "</p><p><b>date: </b>" + date + "</p><p><b>description: </b>" + description + "</p>" );
 
   })
@@ -77,8 +83,7 @@ $(function(){
 $( "#sightings_ul" ).on( "click", "a", function( event ) {
     event.preventDefault();
 
-    var sightingId = $(this).closest('[id]').attr('id')
-    console.log(sightingId);
+    var sightingId = $(this).closest('[id]').attr('id');
 
     //call the function that finds the sighting and displays its info
     displaySighting(sightingId);
@@ -162,28 +167,6 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
 ////////////////
 });
 // end of onLoad
-
-
-// http://d28xhcgddm1buq.cloudfront.net/product-images/36-pvc-onion-grass-green-3.jpg
-
-
-
-// <span class=​"sightingFood">​wild strawberry​</span>​
-// test.parentElement
-// <a href=​"#">​…​</a>​
-// $(test).parent()
-// [<a href=​"#">​…​</a>​]
-// $(test).parent().parent()
-// [<li class=​"linkSighting" id=​"29">​…​</li>​]
-// $(test).parent().parent().id
-// undefined
-// parent = $(test).parent().parent()
-// [<li class=​"linkSighting" id=​"29">​…​</li>​]
-// parent.id
-// undefined
-// parent.attr('id')
-// "29"
-
 
 
 

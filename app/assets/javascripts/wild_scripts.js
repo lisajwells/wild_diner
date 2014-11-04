@@ -122,8 +122,43 @@ $(function(){
     })
   });
 
+
+/////****this is dummy now copied to alter+++++ button on id="new_sighting_form" to submit form and create new sighting
+  // var sightingCreateButton = $('#sighting_submit');
+  //   sightingCreateButton.on("click", function(e){
+  //     e.preventDefault();
+
+  //     // collect parameters from new_sighting_form
+  //     var food = $('#foodname_inpt').val();
+  //     var location = $('#location_inpt').val();
+  //     var season = $('#season_inpt').val();
+  //     var photo = $('#photo_inpt').val();
+  //     var description = $('#description_inpt').val();
+
+  //     // submit info to ruby to call googlemaps to convert to latLng and save sighting 
+  //     $.ajax({
+  //       type: "POST",
+  //       url: "/sightings",
+  //       data: {
+  //         food: food,
+  //         location: location,
+  //         season: season,
+  //         photo: photo,
+  //         description: description
+  //       },
+  //     }).done(function(results){
+
+  //     // run getSightingsByUser with new info included
+  //     getSightingsByUser();
+  //     $('#sightingNewModal').modal('toggle');
+
+  //   })
+  // });
+
+
+
 ///// topnav -- sightings should go to map view and my_sightings should go to users
-// it's in wild_scripts_user.js in order to run sightings by user function
+// it's in wild_scripts_user.js in order to run sightings_by_user function
 
 
 });

@@ -94,9 +94,12 @@
     <div class="row noshow" id="users_show">
 
       <div class="col-md-6" id="my_sightings">
-        <%= render partial: "users/users_show" %>
+        <p class="lead">My Sightings</p>
+        <ul id="sightings_ul"></ul>
+        <button type="submit" class="btn btn-primary btn-lg" id="sighting_new_btn">I found something!</button>
       </div>
-
+      
+      <!-- begin individual sighting show -->
       <div class="col-md-17 noshow" id="sighting_show">
         <div class="row">
           <div class="col-md-7 show_sighting_photo">
@@ -105,6 +108,12 @@
           <div class="col-md-16 show_sighting_info">
             <!-- appropriate sighting info displays on link click -->
           </div>
+        </div>
+        <!-- buttons for edit and delete -->
+        <div class="row">
+          <button type="submit" class="btn btn-primary btn-sm" name="edit_sighting_btn" id="edit_sighting_submit">Edit this sighting</button>
+          <button type="submit" class="btn btn-primary btn-sm" name="delete_sighting_btn" id="delete_sighting_submit">Delete this sighting</button>
+          <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
         </div>
       </div>
 

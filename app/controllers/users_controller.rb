@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  def new
+    render :new
+  end
+  
+
+  def create
+
+  end
+
+
   def index
     user_sightings = Sighting.where(user_id: session[:user_id])
 
