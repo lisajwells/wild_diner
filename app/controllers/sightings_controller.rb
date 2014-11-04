@@ -1,6 +1,8 @@
 class SightingsController < ApplicationController
 
-  # this is where javascript comes to get sighting by id info
+
+# this is where javascript comes to get sighting by id info
+# GET    /sightings_____sightings#index
   def index
     sighting_id = params[:sightingId]
 
@@ -13,11 +15,14 @@ class SightingsController < ApplicationController
     end    
   end
 
+
+# GET    /sightings/new_____sightings#new
   def new
 
   end
 
 # to create new sighting
+# POST   /sightings_____sightings#create
   def create
 
     food = params[:food]

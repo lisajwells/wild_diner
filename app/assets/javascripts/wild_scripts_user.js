@@ -43,7 +43,6 @@ function displaySighting(sightingId) {
     },
   }).done(function(results){
 
-
     var photo = results["sighting"]["photo_url"];
 
     var food = results["sighting"]["food"];
@@ -51,11 +50,12 @@ function displaySighting(sightingId) {
     var season = results["sighting"]["season"];
     var date = results["sighting"]["created_at"];
     var description = results["sighting"]["description"];
+    
     $("#sighting_show").removeClass('noshow');
     
     if (photo.length > 0){
-      $(".show_sighting_photo").removeClass('noshow')
-       $(".show_sighting_photo").html("<img src='" + photo + "'>");
+      $(".show_sighting_photo").removeClass('noshow');
+      $(".show_sighting_photo").html("<img src='" + photo + "'>")
     } else {
        $(".show_sighting_photo").addClass('noshow')
     }

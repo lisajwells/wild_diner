@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+
+# GET    /users_____users#index
   def index
     user_sightings = Sighting.where(user_id: session[:user_id])
 
@@ -10,11 +12,14 @@ class UsersController < ApplicationController
     end    
   end
 
+
+# GET    /users/new_____users#new
   def new
     render :new
   end
 
 
+# POST   /users_____users#create
   def create
     User.create({
       username: params[:username],

@@ -27,8 +27,9 @@
     <!-- Begin page content -->
 
     <!-- Error message renders if login fails -->
-   
-
+    <% if @error %>
+     <p style='color: red;'>Try again</p>
+    <% end %>
 
     <!-- Form to login -->
     <form role="form" id="login_form" action="/session" method="POST">

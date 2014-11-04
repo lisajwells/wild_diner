@@ -1,9 +1,12 @@
 class SessionController < ApplicationController
 
+
+# GET    /session/new_____session#new
   def new
     render :new
   end
 
+# GET    /session_____session#index
   def index
     @user = User.find_by(id: session[:user_id])
     if @user
@@ -14,6 +17,7 @@ class SessionController < ApplicationController
     end
   end
 
+# POST   /session_____session#create
   def create
     user = User.find_by(username: params[:username])
     
