@@ -50,7 +50,9 @@ function displaySighting(sightingId) {
     var food = results["sighting"]["food"];
     var location = results["sighting"]["location"];
     var season = results["sighting"]["season"];
-    var date = results["sighting"]["created_at"];
+    var created = results["sighting"]["created_at"];
+    var date = moment(created).format("MM/DD/YYYY");
+
     var description = results["sighting"]["description"];
     
     $("#sighting_show").removeClass('noshow');
