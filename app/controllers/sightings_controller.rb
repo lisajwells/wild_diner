@@ -25,19 +25,15 @@ class SightingsController < ApplicationController
 # POST   /sightings_____sightings#create
   def create
 
-    food = params[:food]
     location = params[:location]
-    season = params[:season]
-    photo_url = params[:photo]
-    description = params[:description]
 
     user = User.find_by(id: session[:user_id])
 
     search_location = location.tr(' ', '+s')
 
- # to get lat long
+    # to get lat long
     response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
-
+    
     lat = response_google["results"][0]["geometry"]["location"]["lat"]
     lng = response_google["results"][0]["geometry"]["location"]["lng"]
 
