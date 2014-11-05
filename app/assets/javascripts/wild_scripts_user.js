@@ -15,7 +15,9 @@ function getSightingsByUser() {
       var sightingFood = sightings[i]["food"];
       var sightingLocation = sightings[i]["location"];
       var sightingSeason = sightings[i]["season"];
-      var sightingDate = sightings[i]["created_at"];
+
+      var sightingCreated = sightings[i]["created_at"];
+      var sightingDate = moment(sightingCreated).format("MM/DD/YYYY");
 
       // we need the sighting obj id's in the db so that... 
       var sightingId = sightings[i]["id"]; 

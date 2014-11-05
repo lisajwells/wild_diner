@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 #          user GET    /users/:id(.:format)          users#show
 #               PATCH  /users/:id(.:format)          users#update
 #               PUT    /users/:id(.:format)          users#update
-              DELETE /users/:id(.:format)          users#dest
+              # DELETE /users/:id(.:format)          users#dest
 # session_maptest GET    /session/maptest(.:format)    session#maptest
 
 
