@@ -29,6 +29,14 @@ dave = User.create( {
   bio: "Biltong ribeye nostrud ut anim officia adipisicing sausage laboris tri-tip meatloaf incididunt ullamco spare ribs. Strip steak drumstick kielbasa cupidatat shank andouille pig laboris leberkas. Ut anim ut velit, bresaola rump deserunt aliquip lorem. Salami pig eiusmod nisi deserunt. Ground round cupidatat ad ball tip, spare ribs eiusmod laboris voluptate shankle t-bone aliqua culpa in capicola."
   } )
 
+raymond = User.create( { 
+  username: "raymondsimmons", 
+  email: "raymond.simmons30@example.com",
+  password: "raymond",
+  photo: "http://api.randomuser.me/portraits/med/men/56.jpg",
+  bio: "Culpa quinoa Odd Future, Brooklyn cred Truffaut qui dolor consectetur seitan est occaecat. Asymmetrical vinyl DIY mustache occupy, sriracha sustainable velit. Portland eu viral leggings chia roof party. Semiotics yr wolf single-origin coffee organic, pork belly farm-to-table. Disrupt YOLO culpa labore, ea pork belly direct trade Helvetica aliqua. Portland raw denim mlkshk nisi aliquip. Seitan qui in church-key, typewriter tofu consectetur."
+  } )
+
 Sighting.create ( {
     food: "ramps",
     description: "Both the leaves and the bulbs of ramps can be eaten and both are delicious.  They are best used fresh, but can also be prepared for long term storage.  We've found the best way to store the bulbs is by freezing.  Simply cut off the greens, clean the dirt off the bulbs and cut off the roots.  Then spread the bulbs out on a sheet pan or waxed paper so they are not touching and freeze.  This prevents them from sticking together.  Once they are frozen put them in jars or plastic containers, seal tightly and return to freezer.",
@@ -68,7 +76,7 @@ Sighting.create ({
     location: "Annandale-On-Hudson, NY",
     season: "winter",
     photo_url: "http://d2yu7kf2857oao.cloudfront.net/wp-content/uploads/2010/11/asarum.jpg",
-    user_id: avery.id,
+    user_id: raymond.id,
     lat: 42.0128695,
     lng: -73.9081901
 })
@@ -101,7 +109,7 @@ description: "This reddish-stained non-woody plant grows from 4-8 feet tall and 
 location: "Rhinebeck, NY",
 season: "winter",
 photo_url: "http://paganpages.org/content/wp-content/uploads/2013/07/pokeweed1-300x199.jpg",
-user_id: dave.id,
+user_id: avery.id,
 lat: 41.931829,
 lng: -73.907437
 })
@@ -112,7 +120,7 @@ description: "Epazote contains compounds which actually act as an anti-gas agent
 location: "West Hurley, NY",
 season: "autumn",
 photo_url: "http://www.aerogardenblog.com/wp-content/uploads/2011/11/epazote.jpg",
-user_id: joe.id,
+user_id: raymond.id,
 lat: 41.997314,
 lng: -74.104864
 })
@@ -150,24 +158,41 @@ lat: 41.997314,
 lng: -74.104864
 })
 
+Sighting.create ({
+food: "Wild Blueberries",
+description: "Wild blueberries, small and flavourful, are everywhere in woods in Northern Ontario this month. They are easy to find and so much more delicious and flavourful than the fat, farm-grown ones. They are called Saskatoon berries all across the Prairies. If you happen to live in British Columbia, watch out for salal berries, also dark blue but the size of a cranberry and delicious in jams.",
+location: "Pine Plains, NY",
+season: "autumn",
+photo_url: "http://media.treehugger.com/assets/images/2011/10/food-foraging.jpg",
+user_id: raymond.id,
+lat: 44.0950626,
+lng: -75.7052065
+})
+
+Sighting.create ({
+food: "Nettles",
+description: "Some people have learned to handle nettles without getting stung, but I find it's much more simple to strip off the leaves quickly with work gloves, rinse, and steam.",
+location: "Lincoln Park, NY",
+season: "winter",
+photo_url: "http://www.wildmanstevebrill.com/JPEG'S/Plant%20Web%20Images/StingingNettleShoot.jpg",
+user_id: dave.id,
+lat: 41.9514,
+lng: -73.9944
+})
+
+Sighting.create ({
+food: "Nasturtium",
+description: "In the world of edible annual flowers, nasturtiums are one of the tastiest and easiest to grow. Nasturtiums grow quickly from seed and, depending on the variety, can be grown as climbers on fences and trellises or as bushy plants in a window boxes and containers. Although treated as annuals, these fast growing plants are technically herbaceous perennials. In frost-free areas of the South and West they grow so vigorously that many people consider them weeds.
+",
+location: "Accord, NY",
+season: "spring",
+photo_url: "http://www.garden.org/ediblelandscaping/images/august2008/nasturtium1.jpg",
+user_id: avery.id,
+lat: 41.7911,
+lng: -74.2289
+})
 
 
 
-  # create_table "sightings", force: true do |t|
-  #   t.string   "food"
-  # description
-  #   t.string   "location"
-  #   t.string   "season"
-  #   t.string   "photo_url"
-  #   t.integer  "username_id"
-  #   t.datetime "created_at"
-  #   t.datetime "updated_at"
-  # end
 
-  # create_table "users", force: true do |t|
-  #   t.string "username"
-  #   t.string "email"
-  #   t.string "password_digest"
-  #   t.string "photo"
-  #   t.string "bio"
-  # end
+  
