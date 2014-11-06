@@ -1,7 +1,9 @@
 // scripts for the sessions index view and the map view
 
+
+
 // (feeding results lat long)
-// call from mapSearchButton block
+// call from mapSearchButton
     function initialize(results) {
 
       // lat long coming from results of mapSearchButton function to searches_controller
@@ -83,6 +85,13 @@ function pinModal(info) {
 
 /////////////////// on load
 $(function(){
+
+   $('body').on('hidden.bs.modal', '.modal', function() {
+   console.log('Modal is hidden');
+       $(this).removeData('bs.modal');
+      });
+
+
 
 
 ///// button to go to sightings index (map view) from sessions index

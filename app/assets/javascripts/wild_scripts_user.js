@@ -1,6 +1,7 @@
 // scripts for the users show view (sightings and new sightings)
 
 
+
 function getSightingsByUser() {
   $.ajax({
     url: '/users',
@@ -56,7 +57,8 @@ function displaySighting(sightingId) {
     var description = results["sighting"]["description"];
     
     $("#sighting_show").removeClass('noshow');
-    
+
+    // conditional so empty picture box does not display at all
     if (photo.length > 0){
       $(".show_sighting_photo").removeClass('noshow');
       $(".show_sighting_photo").html("<img src='" + photo + "'>")
@@ -69,8 +71,10 @@ function displaySighting(sightingId) {
   })
 };
 
+
 /////////////////// on load
 $(function(){
+
 
 ///// button on found_or_hunt page to call getSightingsByUser function
   var goToUserShowButton = $('#found_button');
@@ -95,17 +99,28 @@ $( "#sightings_ul" ).on( "click", "a", function( event ) {
     //call the function that finds the sighting and displays its info
     displaySighting(sightingId);
 });
-//
 
-// button on user view to bring up sighting_new modal
+
+// $('#sightingNewModal').on('hidden.bs.modal', function (e) {
+//   console.log('sightingNewModal is hidden');
+//   $('#new_sighting_modal_body').removeData('#new_sighting_modal_body');
+// });
+
+// $('#pinModal').on('hidden.bs.modal', function (e) {
+//   console.log('pinModal is hidden')
+//   $('#pin_modal_body').removeData('#pin_modal_body');
+// });
+
+
+// button on user view to bring up sighting_new modal --- *** not always bringing fresh content!!!!!
   var sightingNewButton = $('#sighting_new_btn');
     sightingNewButton.on("click", function(e){
       e.preventDefault();
 
       $('#sightingNewModal').modal('toggle');
-
   });
 //
+
 
 // button on id="new_sighting_form" to submit form and create new sighting
   var sightingCreateButton = $('#sighting_submit');

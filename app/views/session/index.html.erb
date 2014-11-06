@@ -16,7 +16,7 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title">Food Item</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="pin_modal_body">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -30,7 +30,8 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title">What I found...</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="new_sighting_modal_body">
+        
         <!-- form here to create new sighting -->
         <form role="form" id="new_sighting_form" action="/sightings/create" method="POST">
 
@@ -42,16 +43,23 @@
             <label for="location">Location</label>
             <input type="text"  name="location" class="form-control" id="location_inpt" placeholder="Nearby Town, ST">
           </div>
+          <!-- this should be a dropdown -->
           <div class="form-group">
-            <label for="location">Season</label>
-            <input type="text"  name="season" class="form-control" id="season_inpt" placeholder="season">
+            <label for="season">Season</label>
+            <select name="season" id="season_inpt" class="form-control newSightingSelect input-sm">
+              <option selected="selected">Select a season</option>
+              <option value="spring">Spring</option>
+              <option value="summer">Summer</option>
+              <option value="autumn">Autumn</option>
+              <option value="winter">Winter</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="location">Photo</label>
+            <label for="photo_url">Photo</label>
             <input type="text"  name="photo_url" class="form-control" id="photo_inpt" placeholder="web address that links to your photo">
           </div>
           <div class="form-group">
-            <label for="location">Description</label>
+            <label for="description">Description</label>
             <input type="textarea"  name="description" class="form-control" id="description_inpt" placeholder="Talk about your food find">
           </div>
           <button type="submit" class="btn btn-primary" name="new_sighting_btn" id="sighting_submit">Report It!</button>
@@ -111,9 +119,11 @@
         </div>
         <!-- buttons for edit and delete -->
         <div class="row">
-          <button type="submit" class="btn btn-primary btn-sm" name="edit_sighting_btn" id="edit_sighting_submit">Edit this sighting</button>
-          <button type="submit" class="btn btn-primary btn-sm" name="delete_sighting_btn" id="delete_sighting_submit">Delete this sighting</button>
-          <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+          <div class="col-md-16 col-md-offset-7">
+            <button type="submit" class="btn btn-primary btn-sm" name="edit_sighting_btn" id="edit_sighting_submit">Edit this sighting</button>
+            <button type="submit" class="btn btn-primary btn-sm" name="delete_sighting_btn" id="delete_sighting_submit">Delete this sighting</button>
+            <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+          </div>
         </div>
       </div>
 
