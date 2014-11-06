@@ -71,6 +71,30 @@ function displaySighting(sightingId) {
   })
 };
 
+// actually, i'm going to try active record validation for user create
+///// form validation for new user form
+// function validateNewUser(){
+//   // this function will return whether a form isValid, 
+//   // use it in a test to see whether or not to add a user to the db  
+//   var inputs = document.querySelectorAll(".newUserRequired");
+//   var isValid = true;
+//   notEmpty = true;
+
+//   // check that required fields are not empty
+//   for(var i = 0; i < inputs.length; i++) {
+//     var input = inputs[i];
+//     if ( input.value === '' ) {
+//       notEmpty = false;
+//     }
+//   }
+//   // to return value used to determine whether to create new user
+//   if ( notEmpty == false ) {
+//     isValid = false;
+//   }
+//   return isValid;
+// };
+
+// //
 
 /////////////////// on load
 $(function(){
