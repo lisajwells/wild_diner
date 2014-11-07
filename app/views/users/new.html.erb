@@ -26,6 +26,12 @@
 
     <!-- Begin page content -->
 
+    <!-- Error message renders if login fails -->
+    <% if @user_error %>
+     <p style='color: red;'>need everything</p>
+    <% end %>
+
+
 
     <!-- Form to sign up -->
     <form role="form" id="signup_form" action="/users" method="POST">
