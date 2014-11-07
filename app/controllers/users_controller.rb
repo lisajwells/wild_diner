@@ -21,15 +21,13 @@ class UsersController < ApplicationController
 
 # POST   /users_____users#create
   def create
-    
-    if User.create().valid?
-        User.create({
+     if User.create({
         username: params[:username],
         email: params[:email],
         password: params[:password],
         photo: params[:photo],
         bio: params[:bio],
-      })
+      }).valid?
       redirect_to "/session/new"
     else
       @user_error = true

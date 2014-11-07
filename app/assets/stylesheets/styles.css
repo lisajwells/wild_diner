@@ -27,6 +27,13 @@ body {
   padding: 0 15px;
 }
 
+.form_error {
+  color: #e44424;
+  font-size: 120%;
+  background-color: #D7DEA0;
+  padding-left: 3px;
+}
+
 .bottom_pad {
   padding-bottom: 30px;
 }
