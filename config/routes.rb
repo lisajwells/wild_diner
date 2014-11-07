@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'session/new' => 'session#new'
   get 'session' => 'session#index'
   post 'session' => 'session#create'
+  get 'signout' => 'session#destroy'
 
   post 'searches' => 'searches#new'
   get 'searches' => 'searches#show'

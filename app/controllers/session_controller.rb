@@ -30,10 +30,9 @@ class SessionController < ApplicationController
     end
   end
 
-
-  # def destroy
-  #   reset_session
-  #   redirect_to '/login'
-  # end
+  def destroy
+    reset_session
+    redirect_to '/'
+  end
 
 end

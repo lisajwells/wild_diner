@@ -58,6 +58,25 @@ class SightingsController < ApplicationController
 
   end
 
+  #   def destroy
+  #   artist = Artist.find(params[:id])
+  #   songs = Song.where(artist_id: artist.id)
+
+  #   songs.each do |song|
+  #     song.destroy
+  #   end
+
+  #   artist.destroy
+
+  #   redirect_to '/artists'
+  # end
+
+  
+
+
+
+
+
 end
 
 

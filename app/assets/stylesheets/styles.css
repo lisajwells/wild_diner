@@ -187,4 +187,12 @@ div.show_sighting_info p {
   margin: 0 20px 0 0px;
   padding: 0;
 }
+.footer nav a {
+  color: #D7DEA0;
+  text-decoration: none;
+}
+.footer nav a:hover {
+  color: #e44424;
+  text-decoration: none;
+}
 
