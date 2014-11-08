@@ -140,14 +140,15 @@ nav.topnav ul a:hover {
   margin-bottom: 12px;
 }
 
-.sightingFood {
+p.sightingFood  {
   font-size: 16px;
   font-weight: bold;
   color: #096D91;
+  margin-bottom: 0;
 }
 
-.sightingFood a:hover {
-  color: red;
+li.linkSighting p:hover {
+  color: black;
 }
 
 #my_sightings {

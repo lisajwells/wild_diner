@@ -27,7 +27,7 @@ function getSightingsByUser() {
               // when we go to delete it in the sighting view 
 
       $ul.append("<li class='linkSighting' id='" + sightingId  + 
-        "'><a href='#'><span class='sightingFood'>" + sightingFood + "</span></a></br>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</li>");
+        "'><a href='#'><p class='sightingFood'>" + sightingFood + "</p></a><p>" + sightingLocation + "</br>" + sightingSeason + "</br>" + sightingDate + "</p></li>");
     }
   })
 };

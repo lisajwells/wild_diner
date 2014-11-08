@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: wild_diner_development
-  username: 
+  username: lisa
   host: localhost
 
   # The specified database role being used to connect to postgres.
