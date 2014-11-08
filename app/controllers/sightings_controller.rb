@@ -58,6 +58,21 @@ class SightingsController < ApplicationController
 
   end
 
+  # to edit sighting 
+  # GET    /sightings/:id/edit_____sightings#edit
+  def edit
+    sighting_id = params[:sightingId]
+
+    sighting = Sighting.find_by(id: sighting_id)
+    
+    results = { sighting: sighting }
+
+    respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
+  end
+
+
   #   def destroy
   #   artist = Artist.find(params[:id])
   #   songs = Song.where(artist_id: artist.id)

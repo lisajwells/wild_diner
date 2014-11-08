@@ -1,7 +1,6 @@
 // scripts for the sessions index view and the map view
 
 
-
 // (feeding results lat long)
 // call from mapSearchButton
     function initialize(results) {
@@ -131,12 +130,6 @@ $(function(){
     })
   });
 
-
-
-
-
-///// topnav -- sightings should go to map view and my_sightings should go to users
-// it's in wild_scripts_user.js in order to run sightings_by_user function
 
 
 });

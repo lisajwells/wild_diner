@@ -9,47 +9,38 @@ Rails.application.routes.draw do
 
   post 'searches' => 'searches#new'
   get 'searches' => 'searches#show'
-  # get 'searches/:search' => 'searches#new'
-  # post 'searches' => 'searches#create'
 
   resources :sightings
   resources :users
 
-
-
-
-
-
-
 #        Prefix Verb   URI Pattern                   Controller#Action
-#          root GET    /                             welcomes#index
+# *         root GET    /                             welcomes#index
 
-#   session_new GET    /session/new(.:format)        session#new
-#       session GET    /session(.:format)            session#index
-#               POST   /session(.:format)            session#create
+# *  session_new GET    /session/new(.:format)        session#new
+# *      session GET    /session(.:format)            session#index
+# *              POST   /session(.:format)            session#create
+# *      signout GET    /signout(.:format)            session#destroy
 
-#      searches POST   /searches(.:format)           searches#new
-#               GET    /searches(.:format)           searches#show
+# *     searches POST   /searches(.:format)           searches#new
+# *              GET    /searches(.:format)           searches#show
 
-#     sightings GET    /sightings(.:format)          sightings#index
-#               POST   /sightings(.:format)          sightings#create
-#  new_sighting GET    /sightings/new(.:format)      sightings#new
-# edit_sighting GET    /sightings/:id/edit(.:format) sightings#edit
+# *    sightings GET    /sightings(.:format)          sightings#index
+# *              POST   /sightings(.:format)          sightings#create
+# * new_sighting GET    /sightings/new(.:format)      sightings#new
+# *edit_sighting GET    /sightings/:id/edit(.:format) sightings#edit
 #      sighting GET    /sightings/:id(.:format)      sightings#show
 #               PATCH  /sightings/:id(.:format)      sightings#update
 #               PUT    /sightings/:id(.:format)      sightings#update
 #               DELETE /sightings/:id(.:format)      sightings#destroy
 
-#         users GET    /users(.:format)              users#index
-#               POST   /users(.:format)              users#create
-#      new_user GET    /users/new(.:format)          users#new
+# *        users GET    /users(.:format)              users#index
+# *              POST   /users(.:format)              users#create
+# *     new_user GET    /users/new(.:format)          users#new
 #     edit_user GET    /users/:id/edit(.:format)     users#edit
 #          user GET    /users/:id(.:format)          users#show
 #               PATCH  /users/:id(.:format)          users#update
 #               PUT    /users/:id(.:format)          users#update
-              # DELETE /users/:id(.:format)          users#dest
-# session_maptest GET    /session/maptest(.:format)    session#maptest
-
+#               DELETE /users/:id(.:format)          users#destroy
 
 
   # The priority is based upon order of creation: first created -> highest priority.
