@@ -73,8 +73,8 @@ function pinModal(info) {
 
       var contentString = '<div id="infoContent"><img src="'+sightingPhoto+'"><p>'+sightingDescription+'</p><p>&mdash;sighted by '+username+'</p></div>';
 
-      $('.modal-title').html(sightingFood);
-      $('.modal-body').html(contentString);
+      $('#pinModal .modal-title').html(sightingFood);
+      $('#pinModal .modal-body').html(contentString);
       $('#pinModal').modal('toggle');
 
     })
