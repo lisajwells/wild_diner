@@ -61,11 +61,14 @@ class SightingsController < ApplicationController
   # to edit sighting 
   # GET    /sightings/:id/edit_____sightings#edit
   def edit
-    sighting_id = params[:sightingId]
+    sighting = Sighting.find(params[:id])
+    food = sighting.food
+    # sighting_id = params[:sightingId]
 
-    sighting = Sighting.find_by(id: sighting_id)
+    # sighting = Sighting.find_by(id: sighting_id)
     
-    results = { sighting: sighting }
+    results = { sighting: sighting, food: food }
+# binding.pry
 
     respond_to do |format|
       format.json { render :json => results.to_json }

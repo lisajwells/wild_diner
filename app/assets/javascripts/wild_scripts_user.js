@@ -77,7 +77,9 @@ function editSighting(sightingId){
     },
   }).done(function(results){
 
-    $('#edit_food').text(results["food"]);
+  	var food = results["food"];
+
+    $('#edit_food').text(food);
     $('#edit_location').text(results["location"]);
     $('#edit_season').text(results["season"]);
     $('#edit_photo').text(results["photo"]);
@@ -94,11 +96,10 @@ $(function(){
 	var editSightingBtn = $('#edit_sighting_submit');
 	editSightingBtn.on('click', function(e){
 		e.preventDefault();
-		console.log('edit_sighting_submit clicked');
-
+console.log('edit sight submit clicked')
 		var div = this.parentElement.parentElement.parentElement.children[0].children[1];
 		var sightingId = div.id;
-
+// debugger
 		editSighting(sightingId);
 	});
 

@@ -82,7 +82,8 @@
       </div>
       <div class="modal-body" id="edit_sighting_modal_body">
         <!-- form here to create new sighting -->
-        <form role="form" id="edit_sighting_form" action="/sightings/update" method="PUT"> <!-- PUT***** -->
+        <form role="form" id="edit_sighting_form" action="/sightings/update" method="POST"> <!-- PUT***** -->
+          <input type="hidden" name="_method" value="put" />
 
           <div class="form-group">
             <label for="food">Food</label>

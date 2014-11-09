@@ -86,7 +86,6 @@ function pinModal(info) {
 $(function(){
 
    $('body').on('hidden.bs.modal', '.modal', function() {
-   console.log('Modal is hidden');
        $(this).removeData('bs.modal');
       });
 
