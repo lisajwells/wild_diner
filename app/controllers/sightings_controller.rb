@@ -67,8 +67,7 @@ class SightingsController < ApplicationController
 
     # sighting = Sighting.find_by(id: sighting_id)
     
-    results = { sighting: sighting, food: food }
-# binding.pry
+    results = { sighting: sighting, food: sighting.food }
 
     respond_to do |format|
       format.json { render :json => results.to_json }

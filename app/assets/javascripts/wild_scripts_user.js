@@ -66,27 +66,27 @@ function displaySighting(sightingId) {
 };
 
 // function editSighting(food, location, season, photo, description){
-function editSighting(sightingId){
+// function editSighting(sightingId){
 
 // ///// to edit a sighting, put it to the db, and display the sighting view with the edited content
 // // call this in the event listener for the edit_sighting_btn
-  $.ajax({
-    url: '/sightings/' + sightingId + '/edit', 
-    type: 'GET',
-    data: {
-    },
-  }).done(function(results){
+//   $.ajax({
+//     url: '/sightings/' + sightingId + '/edit', 
+//     type: 'GET',
+//     data: {
+//     },
+//   }).done(function(results){
 
-  	var food = results["food"];
+//   	var food = results["food"];
 
-    $('#edit_food').text(food);
-    $('#edit_location').text(results["location"]);
-    $('#edit_season').text(results["season"]);
-    $('#edit_photo').text(results["photo"]);
-    $('#edit_description').text(results["description"]);
-    $('#sightingEditModal').modal('toggle');
-  })
-};
+//     $('#edit_food').text(food);
+//     $('#edit_location').text(results["location"]);
+//     $('#edit_season').text(results["season"]);
+//     $('#edit_photo').text(results["photo"]);
+//     $('#edit_description').text(results["description"]);
+//     $('#sightingEditModal').modal('toggle');
+//   })
+// };
 
 
 /////////////////// on load
@@ -96,12 +96,34 @@ $(function(){
 	var editSightingBtn = $('#edit_sighting_submit');
 	editSightingBtn.on('click', function(e){
 		e.preventDefault();
-console.log('edit sight submit clicked')
+
 		var div = this.parentElement.parentElement.parentElement.children[0].children[1];
 		var sightingId = div.id;
-// debugger
-		editSighting(sightingId);
-	});
+
+  $.ajax({
+    url: '/sightings/' + sightingId + '/edit', 
+    type: 'GET',
+    data: {
+    },
+  }).done(function(results){
+
+  	// var food = results["sighting"]["food"];
+  	// var location = results["sighting"]["location"];
+  	// var season = results["sighting"]["season"];
+  	// var description = results["sighting"]["description"];
+  	// var photo = results["sighting"]["photo_url"];
+
+    $('#edit_food').val(results["sighting"]["food"]);
+    $('#edit_location').val(results["sighting"]["location"]);
+    $('#edit_season').val(results["sighting"]["season"]);
+    $('#edit_photo').val(results["sighting"]["photo"]);
+    $('#edit_description').val(results["sighting"]["description"]);
+    $('#sightingEditModal').modal('toggle');
+  })
+});
+
+		// editSighting(sightingId);
+	// });
 
 
 	///// button on found_or_hunt page to call getSightingsByUser function
