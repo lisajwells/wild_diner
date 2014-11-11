@@ -74,6 +74,16 @@ class SightingsController < ApplicationController
   # PUT    /sightings/:id_____sightings#update
   def update
     sighting = Sighting.find(params[:id])
+    location = params[:location]
+
+    search_location = location.tr(' ', '+s')
+
+    # to get lat long
+    response_google = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address="+search_location+"&key=AIzaSyD3P4t5g6dSiuu1HTeljU_lsVzjqpSinoc")
+    
+    lat = response_google["results"][0]["geometry"]["location"]["lat"]
+    lng = response_google["results"][0]["geometry"]["location"]["lng"]
+
 
     sighting.update ( {
       food: params[:food],
@@ -81,8 +91,8 @@ class SightingsController < ApplicationController
       location: params[:location],
       season: params[:season],
       photo_url: params[:photo],
-      # lat: lat,
-      # lng: lng
+      lat: lat,
+      lng: lng
     } )
 
     results = { sighting: sighting }
