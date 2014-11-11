@@ -122,6 +122,7 @@ $(function(){
 			// run getSightingsByUser with updated info included
 			getSightingsByUser();
 			$('#sightingEditModal').modal('toggle');
+			displaySighting(sightingId);
 			})
 		
 		})
