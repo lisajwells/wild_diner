@@ -129,7 +129,17 @@ $(function(){
     })
   });
 
+///// contact us link to modal
+ var contactLink = $('#botnav_contact');
+ contactLink.on("click", function(e){
+  e.preventDefault();
 
+  console.log('contactLink clicked');
+  $('#contactModal').modal('toggle');
+
+ })
+
+//
 
 });
 // end of onLoad

@@ -152,7 +152,7 @@ $(function(){
 	});
 
 
-	///// button on user view to bring up sighting_new modal --- *** not always bringing fresh content!!!!!
+	///// button on user view to bring up sighting_new modal
 	var sightingNewButton = $('#sighting_new_btn');
 	sightingNewButton.on("click", function(e){
 		e.preventDefault();

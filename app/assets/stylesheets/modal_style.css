@@ -23,3 +23,15 @@ border-bottom: 1px solid #e44424;
   margin-right: 10px;
 } 
 
+#contact_modal_body p {
+  color: #B7BD88;
+}
+
+#contact_modal_body p a {
+  color: #D7DEA0;
+  text-decoration: none;
+}
+#contact_modal_body p a:hover {
+  color: #e44424;
+  text-decoration: none;
+}
