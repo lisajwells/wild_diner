@@ -82,7 +82,7 @@
       </div>
       <div class="modal-body" id="edit_sighting_modal_body">
         <!-- form here to create new sighting -->
-        <form role="form" id="edit_sighting_form" action="/sightings/update" method="POST"> <!-- PUT***** -->
+        <form role="form" id="edit_sighting_form" action="/sightings/:id" method="POST"> <!-- PUT***** -->
           <input type="hidden" name="_method" value="put" />
 
           <div class="form-group">
@@ -112,7 +112,7 @@
             <label for="description">Description</label>
             <input type="textarea"  name="description" class="form-control" id="edit_description">
           </div>
-          <button type="submit" class="btn btn-primary" name="edit_sighting_btn" id="update_sighting_submit">Change It!</button>
+          <button type="submit" class="btn btn-primary" name="update_sighting_btn" id="update_sighting_submit">Change It!</button>
           <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
 
         </form>

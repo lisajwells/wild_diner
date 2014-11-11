@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 # * new_sighting GET    /sightings/new(.:format)      sightings#new
 # *edit_sighting GET    /sightings/:id/edit(.:format) sightings#edit
 #      sighting GET    /sightings/:id(.:format)      sightings#show
-#               PATCH  /sightings/:id(.:format)      sightings#update
+# *              PATCH  /sightings/:id(.:format)      sightings#update
 #               PUT    /sightings/:id(.:format)      sightings#update
 #               DELETE /sightings/:id(.:format)      sightings#destroy
 

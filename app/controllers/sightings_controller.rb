@@ -63,16 +63,43 @@ class SightingsController < ApplicationController
   def edit
     sighting = Sighting.find(params[:id])
     food = sighting.food
-    # sighting_id = params[:sightingId]
 
-    # sighting = Sighting.find_by(id: sighting_id)
-    
     results = { sighting: sighting, food: sighting.food }
 
     respond_to do |format|
       format.json { render :json => results.to_json }
     end    
   end
+
+  # PUT    /sightings/:id_____sightings#update
+  def update
+    sighting = Sighting.find(params[:id])
+
+    sighting.update ( {
+      food: params[:food],
+      description: params[:description],
+      location: params[:location],
+      season: params[:season],
+      photo_url: params[:photo],
+      # lat: lat,
+      # lng: lng
+    } )
+
+    results = { sighting: sighting }
+
+    respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
+  end
+
+
+# put("/contacts/:id") do
+#   contact = Contact.find(params[:id])
+#   contact.update(contact_params(params))
+
+#   contact.to_json
+# end
+
 
 
   #   def destroy
