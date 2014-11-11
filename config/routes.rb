@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'welcomes#index'
 
-  get 'contact' => 'welcomes#show'
+  # get 'contact' => 'welcomes#show'
 
   get 'session/new' => 'session#new'
   get 'session' => 'session#index'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 #      sighting GET    /sightings/:id(.:format)      sightings#show
 # *              PATCH  /sightings/:id(.:format)      sightings#update
 #               PUT    /sightings/:id(.:format)      sightings#update
-#               DELETE /sightings/:id(.:format)      sightings#destroy
+# *              DELETE /sightings/:id(.:format)      sightings#destroy
 
 # *        users GET    /users(.:format)              users#index
 # *              POST   /users(.:format)              users#create

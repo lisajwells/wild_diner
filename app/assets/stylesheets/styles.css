@@ -93,6 +93,10 @@ nav.topnav ul a:hover {
   background-color: #237795;
 }
 
+#map_search_button {
+  margin-top: 20px;
+}
+
 #edit_sighting_submit, #delete_sighting_submit {
   background-color: #73793d;
   margin-right: 8px;

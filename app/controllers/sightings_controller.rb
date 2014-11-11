@@ -103,12 +103,10 @@ class SightingsController < ApplicationController
   end
 
 
-# put("/contacts/:id") do
-#   contact = Contact.find(params[:id])
-#   contact.update(contact_params(params))
+  # DELETE /sightings/:id_____sightings#destroy
+  def destroy
 
-#   contact.to_json
-# end
+  end
 
 
 
