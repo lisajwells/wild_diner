@@ -134,7 +134,6 @@ $(function(){
  contactLink.on("click", function(e){
   e.preventDefault();
 
-  console.log('contactLink clicked');
   $('#contactModal').modal('toggle');
 
  })
