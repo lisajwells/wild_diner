@@ -6,8 +6,8 @@ Sighting.delete_all
 User.delete_all
 
 joe = User.create( { 
-  username: "joeblow", 
-  email: "joeblow@joe.com",
+  username: "joedoe", 
+  email: "joedoe@joe.com",
   password: "joe",
   photo: "http://api.randomuser.me/portraits/med/men/37.jpg",
   bio: "You wouldn't believe all the things I eat."
