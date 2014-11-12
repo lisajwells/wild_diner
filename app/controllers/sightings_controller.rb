@@ -105,9 +105,15 @@ class SightingsController < ApplicationController
 
   # DELETE /sightings/:id_____sightings#destroy
   def destroy
+    sighting = Sighting.find(params[:id])
+    sighting.destroy
 
+    results = { sighting: sighting }
+
+    respond_to do |format|
+      format.json { render :json => results.to_json }
+    end    
   end
-
 
 
   #   def destroy

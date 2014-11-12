@@ -71,6 +71,33 @@ function displaySighting(sightingId) {
 /////////////////// on load
 $(function(){
 
+	///// button to delete_sighting
+		var deleteSightingBtn = $('#delete_sighting_submit');
+		deleteSightingBtn.on('click', function(e){
+			e.preventDefault();
+
+		var div = this.parentElement.parentElement.parentElement.children[0].children[1];
+		var sightingId = div.id;
+
+		// remove the list item corresponding to the sighting we're going to delete 
+		$("li#" + sightingId).remove();  
+
+	  $.ajax({
+	    url: '/sightings/' + sightingId, 
+	    type: 'DELETE',
+	    data: {
+	    },
+	  }).done(function(){
+			getSightingsByUser();
+
+		// remove the sighting view 
+		$('#sighting_show').addClass('noshow');
+
+		})
+	});
+	//
+
+
 	///// button to edit_sighting
 	var editSightingBtn = $('#edit_sighting_submit');
 	editSightingBtn.on('click', function(e){
